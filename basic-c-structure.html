@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>Basic C Structure</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content="Learn the basic of C Programming Syntax" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">theGoddo</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/blogs.html">Blogs</a></li>
+                    <li><a href="/category/home.html">Home</a></li>
+                    <li><a href="/category/projects.html">Projects</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/basic-c-structure.html" rel="bookmark"
+           title="Permalink to Basic C Structure">Basic C Structure</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2023-02-20T07:27:00+05:30">
+                Published: Mon 20 February 2023
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/biswajit-shaw.html">Biswajit Shaw</a>
+        </address>
+<p>In <a href="/category/blogs.html">Blogs</a>.</p>
+<p>tags: <a href="/tag/tech-c_programming.html">tech c_programming</a> </p>
+</footer><!-- /.post-info -->      <p>This tutorial is for basics of C Programming. It doesn't make you master or intermediate in this language. This tutorial will print Hello World on the terminal and explain the syntax of the basic program.</p>
+<h1>So, Let's Begin</h1>
+<p>First, Write the program in your favorite text editor and run it.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello World&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>output:
+<code>Hello World</code></p>
+<h2>Let's disect the code blocks</h2>
+<p><code>#include&lt;stdio.&gt;</code></p>
+<p>This line just simple import the standart I/O library. All the I/O operation are done throught this library.</p>
+<p><code>int main()</code></p>
+<p>In general, All function in C language must return a value. For example, this function return a integer value. We can change <code>int</code> in <code>int main()</code> to whichever value we want to return.</p>
+<p><code>main()</code> in <code>int main()</code> is the name of the function. <code>main()</code> is the starting point for C. When we run the program the compiler will look for <code>main()</code> and if unavailable it will give an error.</p>
+<p><code>printf("Hello World");</code></p>
+<p><code>printf()</code> is the default output function in standart I/O library. We use this function and pass it a String to print on the terminal. <code>Hello World</code> is the string we passed to the function. Each statement in C must end with <code>";"</code> in the end.</p>
+<p><code>return 0</code></p>
+<p>Simply returns a integer value.</p>
+<p>Each functions in C must be put under the <code>"{" and "}"</code>.</p>
+<h1>Let's wrap it up.</h1>
+<p>Therse were the basics of a program which print <code>Hello World</code> on the terminal. If you want you learn more then you should bookmark this website because I will publish more content related to this on this page.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="./blogs.html">Blogs</a></li>
+                            <li><a href="mailto:biswajitshaw@protonmail.com">E-mail</a></li>
+                            <li><a href="https://thegoddo.github.io">Home Page</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.github.com/thegoddo">Github</a></li>
+                            <li><a href="#">Linked In</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
