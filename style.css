@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Poppins:wght@400;600&display=swap");
+
+.logo {
+  font-family: "Mr Dafoe", cursive;
+  font-size: 18px;
+}
+.nav-bar {
+  display: block;
+}
+
+nav ul {
+  list-style-type: none;
+  overflow: hidden;
+}
+nav ul li {
+  display: inline;
+  padding: 0 14px;
+  float: right;
+}
+
+nav ul li:hover {
+  color: white;
+  background-color: #726e6e7a;
+  border-radius: 2px;
+}
+
+nav ul li:first-child {
+  float: left;
+}
+
+nav ul li a {
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  font-size: 1.3rem;
+  color: black;
+}
+
+.content {
+  margin: 20px;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  max-width: 100vh;
+  flex-direction: row;
+  flex: 60% 40%;
+  gap: 15px;
+  overflow-x: hidden;
+  overflow: auto;
+}
+
+.container-rev {
+  display: flex;
+  max-width: 100vh;
+  flex-direction: row-reverse;
+  flex: 40% 60%;
+  gap: 15px;
+  overflow-x: hidden;
+  overflow: auto;
+}
+.para {
+  line-height: 1.6rem;
+  font-weight: 700;
+  size: 0.7rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.img-pro {
+  width: 260px;
+  height: 300px;
+  border: 1px solid black;
+}
+
+footer {
+  font-size: 18px;
+  color: #726e6e7a;
+  font-weight: bolder;
+}
+
+footer a {
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  font-size: 1.3rem;
+  color: #726e6e7a;
+}
+
+footer a:hover {
+  color: white;
+  background-color: #726e6e7a;
+  border-radius: 2px;
+}
