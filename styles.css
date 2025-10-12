@@ -1,0 +1,35 @@
+body {
+  font-family: "Bangers", cursive, sans-serif;
+  background: #f0f6f2;
+}
+
+.comic-panel {
+  border: 4px solid #222;
+  box-shadow: 8px 8px 0 #f0eb3b;
+  background: #fff;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+}
+
+.speech-bubble {
+  position: relative;
+  background: #fff;
+  border: 3px solid #222;
+  border-radius: 20px;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+}
+
+.speech-bubble:after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 40px;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top: 10px solid #fff;
+  border-right: 0;
+  margin-left: -10px;
+}
