@@ -16,7 +16,7 @@
     <title>Biswajit Shaw | Portfolio</title>
   </head>
   <body>
-    <!-- Nav Bar -->
+    <!-- Navbar -->
     <nav
       class="fixed top-0 left-0 w-full bg-red-600 text-white flex items-center justify-between px-8 py-4 z-20 shadow-lg border-b-4 border-black"
       style="font-family: 'Bangers', cursive"
@@ -40,21 +40,31 @@
         </li>
       </ul>
     </nav>
+
+    <!-- Left Sidebar: In-page links -->
+    <aside
+      class="comic-sidebar fixed top-24 left-4 h-auto w-44 bg-yellow-400 flex flex-col items-center py-8 px-4 z-30"
+    >
+      <button class="comic-link" data-section="about">About Me</button>
+      <button class="comic-link" data-section="portfolio">Portfolio</button>
+      <button class="comic-link" data-section="experience">Experience</button>
+      <button class="comic-link" data-section="contact">Contact Me</button>
+    </aside>
     >
 
-    <!-- This is related to sidebar. -->
+    <!-- Right Sidebar: Social Icons -->
     <aside
-      class="fixed top-16 left-0 h-full w-48 bg-yellow-700 text-black flex flex-col items-center py-8 px-4 border-r-4 border-black space-y-8"
+      class="comic-sidebar fixed top-24 right-4 h-auto w-16 bg-blue-400 flex flex-col items-center py-8 px-2 z-30 space-y-8"
     >
       <a
         href="https://github.com/yourusername"
         target="_blank"
-        class="hover:text-red-600"
+        class="comic-icon"
       >
-        <!-- GitHub SVG Icon -->
+        <!-- GitHub SVG -->
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-10 w-10"
+          class="h-8 w-8"
           fill="currentColor"
           viewBox="0 0 24 24"
         >
@@ -66,12 +76,12 @@
       <a
         href="https://linkedin.com/in/yourusername"
         target="_blank"
-        class="hover:text-blue-700"
+        class="comic-icon"
       >
-        <!-- LinkedIn SVG Icon -->
+        <!-- LinkedIn SVG -->
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-10 w-10"
+          class="h-8 w-8"
           fill="currentColor"
           viewBox="0 0 24 24"
         >
@@ -83,12 +93,12 @@
       <a
         href="https://twitter.com/yourusername"
         target="_blank"
-        class="hover:text-blue-500"
+        class="comic-icon"
       >
-        <!-- Twitter SVG Icon -->
+        <!-- Twitter SVG -->
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-10 w-10"
+          class="h-8 w-8"
           fill="currentColor"
           viewBox="0 0 24 24"
         >
@@ -97,15 +107,17 @@
           />
         </svg>
       </a>
+      <!-- Add more icons as needed -->
     </aside>
 
-    <!--This is the main section-->
-    <main class="ml-52 pt-24 px-8">
-      <div class="comic-panel">
-        <h1 class="text-5xl mb-4">Welcome!</h1>
-        <div class="speech-bubble text-xl">
-          Hi! I'm Biswajit Shaw, and this is my comic-inspired portfolio.
-        </div>
+    <!-- Main Content -->
+    <main class="pt-32 px-8 max-w-3xl mx-auto">
+      <div
+        id="comic-content"
+        class="comic-panel mb-8"
+        style="height: 500px; overflow-y: auto"
+      >
+        <!-- Content will be loaded here -->
       </div>
     </main>
   </body>
