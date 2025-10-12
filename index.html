@@ -16,45 +16,23 @@
     <title>Biswajit Shaw | Portfolio</title>
   </head>
   <body>
-    <!-- Navbar -->
-    <nav
-      class="fixed top-0 left-0 w-full bg-red-600 text-white flex items-center justify-between px-8 py-4 z-20 shadow-lg border-b-4 border-black"
-      style="font-family: 'Bangers', cursive"
-    >
-      <span class="text-3xl tracking-wider">Biswajit Shaw</span>
-      <ul class="flex space-x-8 text-xl">
-        <li>
-          <a href="#about" class="hover:text-yellow-300 transition font-bold"
-            >About</a
-          >
-        </li>
-        <li>
-          <a href="#projects" class="hover:text-yellow-300 transition font-bold"
-            >Projects</a
-          >
-        </li>
-        <li>
-          <a href="#contact" class="hover:text-yellow-300 transition font-bold"
-            >Contact</a
-          >
-        </li>
-      </ul>
-    </nav>
-
     <!-- Left Sidebar: In-page links -->
     <aside
-      class="comic-sidebar fixed top-24 left-4 h-auto w-44 bg-yellow-400 flex flex-col items-center py-8 px-4 z-30"
+      class="comic-sidebar fixed top-1/2 -translate-y-1/2 left-4 h-auto w-44 bg-yellow-400 flex flex-col items-center py-8 px-4 z-30"
     >
       <button class="comic-link" data-section="about">About Me</button>
       <button class="comic-link" data-section="portfolio">Portfolio</button>
       <button class="comic-link" data-section="experience">Experience</button>
       <button class="comic-link" data-section="contact">Contact Me</button>
     </aside>
-    >
+
+    <aside
+      class="comic-sidebar fixed top-1/2 -translate-y-1/2 right-4 h-auto w-16 bg-blue-400 flex flex-col items-center py-8 px-2 z-30 space-y-8"
+    ></aside>
 
     <!-- Right Sidebar: Social Icons -->
     <aside
-      class="comic-sidebar fixed top-24 right-4 h-auto w-16 bg-blue-400 flex flex-col items-center py-8 px-2 z-30 space-y-8"
+      class="comic-sidebar fixed top-1/2 -translate-y-1/2 right-4 h-auto w-16 bg-blue-400 flex flex-col items-center py-8 px-2 z-30 space-y-8"
     >
       <a
         href="https://github.com/yourusername"
@@ -111,16 +89,65 @@
     </aside>
 
     <!-- Main Content -->
-    <main class="pt-32 px-8 max-w-3xl mx-auto">
+    <main class="my-16 px-8 max-w-5xl mx-auto">
+      <div id="section-about" class="comic-panel mb-8" style="overflow-y: auto">
+        <h2>About Me: Developer Extraordinaire!</h2>
+        <p>
+          Greetings, I am Biswajit Shaw! A full-stack developer with a passion
+          for building exciting and robust web applications. My specialty is
+          bringing complex ideas to life with clean, efficient code.
+        </p>
+        <p>
+          When I'm not coding, I'm probably reading a comic book or fueling up
+          on coffee!
+        </p>
+      </div>
+
       <div
-        id="comic-content"
-        class="comic-panel mb-8"
-        style="height: 500px; overflow-y: auto"
+        id="section-portfolio"
+        class="comic-panel mb-8 hidden"
+        style="overflow-y: auto"
       >
-        <!-- Content will be loaded here -->
+        <h2>Portfolio: My Super Projects!</h2>
+        <p>
+          Check out some of my latest work. I've built a superhero database app
+          and a villain tracking system.
+        </p>
+        <ul>
+          <li>**Project A:** The Hero Registry (React, Node.js)</li>
+          <li>**Project B:** Cosmic Commerce Platform (Vue, Express)</li>
+        </ul>
+      </div>
+
+      <div
+        id="section-experience"
+        class="comic-panel mb-8 hidden"
+        style="overflow-y: auto"
+      >
+        <h2>Experience: Battles Won!</h2>
+        <p>
+          **Lead Developer at Stark Industries (2020-Present):** Developed the
+          next-gen AI for Jarvis.
+        </p>
+        <p>
+          **Junior Coder at Wayne Enterprises (2018-2020):** Maintained Gotham's
+          internal network.
+        </p>
+      </div>
+
+      <div
+        id="section-contact"
+        class="comic-panel mb-8 hidden"
+        style="overflow-y: auto"
+      >
+        <h2>Contact Me: Send the Bat-Signal!</h2>
+        <p>
+          The best way to reach me is through email: biswajit.shaw@email.com or
+          connect with me on LinkedIn.
+        </p>
       </div>
     </main>
 
-    <script src="script.js" />
+    <script src="script.js"></script>
   </body>
 </html>

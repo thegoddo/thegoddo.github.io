@@ -1,17 +1,29 @@
-const sections = {
-  about: `<h2>About Me</h2><p>This is the about section. Add your info here!</p>`,
-  portfolio: `<h2>Portfolio</h2><p>Showcase your projects here.</p>`,
-  experience: `<h2>Experience</h2><p>List your work experience here.</p>`,
-  contact: `<h2>Contact Me</h2><p>How people can reach you.</p>`,
-};
+document.addEventListener("DOMContentLoaded", function () {
+  const contentPanels = document.querySelectorAll(".comic-panel");
+  const comicLinks = document.querySelectorAll(".comic-link");
 
-document.querySelectorAll(".comic-link").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const section = btn.getAttribute("data-section");
-    document.getElementById("comic-content").innerHTML =
-      sections[section] || "";
+  function showSection(sectionId) {
+    // 1. Hide ALL content panels
+    contentPanels.forEach((panel) => {
+      panel.classList.add("hidden");
+    });
+
+    // 2. Show the selected content panel
+    const targetPanel = document.getElementById(`section-${sectionId}`);
+    if (targetPanel) {
+      targetPanel.classList.remove("hidden");
+    }
+  }
+
+  // Attach click listener to sidebar links
+  comicLinks.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const section = btn.getAttribute("data-section");
+      showSection(section);
+    });
   });
-});
 
-// Load default section
-document.getElementById("comic-content").innerHTML = sections.about;
+  // Load default section on page load
+  // The 'about' section is set as the default
+  showSection("about");
+});
