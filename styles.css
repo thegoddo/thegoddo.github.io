@@ -1,17 +1,55 @@
 body {
   font-family: "Bangers", cursive, sans-serif;
-  background: #f0f6f2;
+  background: #f9f6f2;
+}
+.comic-sidebar {
+  border: 4px solid #222;
+  box-shadow: 8px 8px 0 #ffeb3b;
+  border-radius: 16px;
+}
+.comic-icon {
+  border: 3px solid #222;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 4px 4px 0 #e91e63;
+  transition: transform 0.1s;
+}
+.comic-icon:hover {
+  transform: scale(1.1) rotate(-5deg);
+  box-shadow: 6px 6px 0 #2196f3;
+}
+.comic-link {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #222;
+  background: #ffeb3b;
+  border: 3px solid #222;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  box-shadow: 4px 4px 0 #e91e63;
+  transition: background 0.2s, color 0.2s, transform 0.1s, box-shadow 0.1s;
+  cursor: pointer;
+  outline: none;
+}
+.comic-link:active {
+  transform: scale(0.95) translateY(2px);
+  box-shadow: 2px 2px 0 #e91e63;
+  background: #ffe082;
+}
+.comic-link:hover {
+  background: #e91e63;
+  color: #fff;
 }
 
 .comic-panel {
   border: 4px solid #222;
-  box-shadow: 8px 8px 0 #f0eb3b;
+  box-shadow: 8px 8px 0 #ffeb3b;
   background: #fff;
   padding: 2rem;
   margin-bottom: 2rem;
   border-radius: 12px;
 }
-
 .speech-bubble {
   position: relative;
   background: #fff;
@@ -20,7 +58,6 @@ body {
   padding: 1rem 2rem;
   margin: 1rem 0;
 }
-
 .speech-bubble:after {
   content: "";
   position: absolute;
@@ -30,6 +67,7 @@ body {
   height: 0;
   border: 10px solid transparent;
   border-top: 10px solid #fff;
+  border-bottom: 0;
   border-right: 0;
   margin-left: -10px;
 }
