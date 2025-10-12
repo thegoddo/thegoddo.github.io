@@ -4,9 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <title>Biswajit Shaw | Portfolio</title>
   </head>
-  <body>
-    <h1 class="text-3xl underline text-cliffor font-bold">Hello! World,</h1>
+  <body font-family="Inter, system-ui, sans-serif">
+    <!-- This is related to sidebar. -->
+    <aside
+      class="fixed top-16 left-0 h-full w-48 bg-yellow-700 text-black flex flex-col py-8 px-4 border-r-4 border-black"
+    >
+      <a href="#about" class="hover:text-red-600 font-bold mb-4">About</a>
+      <a href="#projects" class="hover:text-red-600 font-bold mb-4">Projects</a>
+      <a href="#contact" class="hover:text-red-600 font-bold mb-4">Contact</a>
+    </aside>
+
+    <!--This is the main section-->
+    <main class="ml-52 pt-24 px-8">
+      <div class="comic-panel">
+        <h1 class="text-5xl mb-4">Welcome!</h1>
+        <div class="speech-bubble text-xl">
+          Hi! I'm Biswajit Shaw, and this is my comic-inspired portfolio.
+        </div>
+      </div>
+    </main>
   </body>
 </html>
