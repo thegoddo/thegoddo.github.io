@@ -12,11 +12,13 @@ body {
   border-radius: 50%;
   background: #fff;
   box-shadow: 4px 4px 0 #e91e63;
-  transition: transform 0.1s;
+  transition: transform 0.1s, box-shadow 0.1s;
+  cursor: pointer;
 }
-.comic-icon:hover {
-  transform: scale(1.1) rotate(-5deg);
-  box-shadow: 6px 6px 0 #2196f3;
+.comic-icon:active {
+  transform: scale(0.88) rotate(-8deg);
+  box-shadow: 2px 2px 0 #2196f3;
+  background: #ffe082;
 }
 .comic-link {
   font-size: 1.5rem;

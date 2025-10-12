@@ -8,7 +8,7 @@
       href="https://fonts.googleapis.com/css2?family=Bangers&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" /> 
+    <link rel="stylesheet" href="styles.css" />
     <title>Biswajit Shaw | Mobile Comic</title>
     <style>
       /* Custom CSS for Mobile Hamburger Menu */
@@ -48,198 +48,322 @@
   </head>
 
   <body>
-    <header class="fixed top-0 left-0 w-full bg-yellow-400 border-b-4 border-black z-40 p-4 flex justify-between items-center comic-panel shadow-none">
-        <h1 class="text-xl font-bold" style="font-family: 'Bangers', cursive; color: #e91e63;">BISWAJIT SHAW</h1>
-        <button id="hamburgerToggle" class="hamburger-icon z-50">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+    <header
+      class="fixed top-0 left-0 w-full bg-yellow-400 border-b-4 border-black z-40 p-4 flex justify-between items-center"
+    >
+      <span class="text-2xl font-bold" style="font-family: 'Bangers', cursive">
+        Biswajit Shaw
+      </span>
+      <div class="flex space-x-4">
+        <a
+          href="https://github.com/thegoddo"
+          target="_blank"
+          class="comic-icon"
+          aria-label="GitHub"
+        >
+          <!-- GitHub SVG -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.415-4.033-1.415-.546-1.387-1.333-1.757-1.333-1.757-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 013.003-.404c1.018.005 2.045.138 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.371.823 1.102.823 2.222v3.293c0 .322.218.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+            />
+          </svg>
+        </a>
+        <a
+          href="https://linkedin.com/in/thegoddo"
+          target="_blank"
+          class="comic-icon"
+          aria-label="LinkedIn"
+        >
+          <!-- LinkedIn SVG -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.838-1.563 3.036 0 3.6 2.001 3.6 4.601v5.595z"
+            />
+          </svg>
+        </a>
+        <a
+          href="/files/resume.pdf"
+          download="resume.pdf"
+          target="_blank"
+          class="comic-icon"
+          aria-label="Download Resume"
+        >
+          <!-- PDF SVG -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="w-8 h-8"
+          >
+            <style>
+              .download-arrow {
+                fill: #2196f3; /* Blue arrow */
+                stroke: #222; /* Black outline */
+                stroke-width: 0.8; /* Slight border for comic look */
+                filter: url(#shadow); /* Apply comic shadow */
+              }
+              .download-base {
+                fill: #e91e63; /* Pink base */
+                stroke: #222; /* Black outline */
+                stroke-width: 0.8;
+                filter: url(#shadow);
+              }
+            </style>
+            <defs>
+              <filter id="shadow">
+                <feDropShadow
+                  dx="1"
+                  dy="1"
+                  stdDeviation="0.1"
+                  flood-color="rgba(0,0,0,0.5)"
+                />
+              </filter>
+            </defs>
+
+            <path class="download-base" d="M16 18H8v2h8v-2z" />
+
+            <path class="download-arrow" d="M12 15L7 10h3V4h4v6h3l-5 5z" />
+          </svg>
+        </a>
+      </div>
     </header>
 
-    <nav id="mobileMenu" class="off-canvas-menu z-50 p-6 pt-20">
-        <h2 class="text-3xl mb-6 font-bold" style="font-family: 'Bangers', cursive; color: #222; text-shadow: 2px 2px 0 #ffeb3b;">THE COMIC BOOK</h2>
-        
-        <div class="flex flex-col space-y-4 mb-10">
-            <button class="comic-link w-full text-center" data-section="about">About Me</button>
-            <button class="comic-link w-full text-center" data-section="portfolio">Portfolio</button>
-            <button class="comic-link w-full text-center" data-section="experience">Experience</button>
-            <button class="comic-link w-full text-center" data-section="contact">Contact Me</button>
-        </div>
+    <!-- <nav id="mobileMenu" class="off-canvas-menu z-50 p-6 pt-20">
+      <h2
+        class="text-3xl mb-6 font-bold"
+        style="
+          font-family: 'Bangers', cursive;
+          color: #222;
+          text-shadow: 2px 2px 0 #ffeb3b;
+        "
+      >
+        THE COMIC BOOK
+      </h2>
 
-        <h2 class="text-3xl mb-6 font-bold" style="font-family: 'Bangers', cursive; color: #222; text-shadow: 2px 2px 0 #2196f3;">SOCIAL SUPERPOWERS</h2>
-        
-        <div class="flex flex-col space-y-4">
-            <a href="https://github.com/thegoddo" target="_blank" class="comic-link flex items-center bg-gray-600 text-white hover:bg-black">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="currentColor" viewBox="0 0 24 24">...</svg>
-                GitHub Profile
-            </a>
-            <a href="https://linkedin.com/in/thegoddo" target="_blank" class="comic-link flex items-center bg-blue-600 text-white hover:bg-blue-800">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="currentColor" viewBox="0 0 24 24">...</svg>
-                LinkedIn Connection
-            </a>
-            <a href="/files/resume.pdf" download="resume.pdf" target="_blank" class="comic-link flex items-center bg-red-600 text-white hover:bg-red-800">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="currentColor" viewBox="0 0 24 24">...</svg>
-                Download Resume (PDF)
-            </a>
-        </div>
-    </nav>
-    
-    <main class="pt-20 pb-20 p-4"> 
-        <div
-          id="section-about"
-          class="comic-panel mb-8"
+      <div class="flex flex-col space-y-4 mb-10">
+        <button class="comic-link w-full text-center" data-section="about">
+          About Me
+        </button>
+        <button class="comic-link w-full text-center" data-section="portfolio">
+          Portfolio
+        </button>
+        <button class="comic-link w-full text-center" data-section="experience">
+          Experience
+        </button>
+        <button class="comic-link w-full text-center" data-section="contact">
+          Contact Me
+        </button>
+      </div>
+
+      <h2
+        class="text-3xl mb-6 font-bold"
+        style="
+          font-family: 'Bangers', cursive;
+          color: #222;
+          text-shadow: 2px 2px 0 #2196f3;
+        "
+      >
+        SOCIAL SUPERPOWERS
+      </h2>
+
+      <div class="flex flex-col space-y-4">
+        <a
+          href="https://github.com/thegoddo"
+          target="_blank"
+          class="comic-link flex items-center bg-gray-600 text-white hover:bg-black"
         >
-          <div class="flex flex-col items-center">
-            <div
-              class="mb-4 w-full h-[300px] flex items-center justify-center border-4 border-black image-red-shadow"
-            >
-              <img
-                src="/images/me.png"
-                alt="Biswajit Shaw"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <div>
-              <h2 class="speech-bubble text-lg">
-                <span style="color: red">About Me</span>: Developer Extraordinaire!
-              </h2>
-              <p>
-                Greetings,
-                <span
-                  style="
-                    color: red;
-                    background-color: yellow;
-                    font-size: large;
-                  "
-                  >I am Biswajit Shaw! A full-stack developer</span
-                >
-                with a passion for building exciting and robust web
-                applications. My specialty is bringing complex ideas to life
-                with clean, efficient code.
-              </p>
-              <p>
-                When I'm not coding, I'm probably reading a comic book or
-                fueling up on coffee!
-              </p>
-            </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 mr-2"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            ...
+          </svg>
+          GitHub Profile
+        </a>
+        <a
+          href="https://linkedin.com/in/thegoddo"
+          target="_blank"
+          class="comic-link flex items-center bg-blue-600 text-white hover:bg-blue-800"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 mr-2"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            ...
+          </svg>
+          LinkedIn Connection
+        </a>
+        <a
+          href="/files/resume.pdf"
+          download="resume.pdf"
+          target="_blank"
+          class="comic-link flex items-center bg-red-600 text-white hover:bg-red-800"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 mr-2"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            ...
+          </svg>
+          Download Resume (PDF)
+        </a>
+      </div>
+    </nav> -->
+
+    <main class="pt-32 pb-20 p-4">
+      <div id="section-about" class="comic-panel mb-8">
+        <div class="flex flex-col items-center">
+          <div
+            class="mb-4 w-full h-[300px] flex items-center justify-center border-4 border-black image-red-shadow"
+          >
+            <img
+              src="/images/me.png"
+              alt="Biswajit Shaw"
+              class="w-full h-full object-cover"
+            />
           </div>
-        </div>
-
-        <div
-          id="section-portfolio"
-          class="comic-panel mb-8 hidden"
-        >
-          <div class="flex flex-col items-center">
-            <div
-              class="mb-4 w-full h-[200px] flex items-center justify-center border-4 border-black image-red-shadow"
-            >
-              <img
-                src="/images/portfolio.jpg"
-                alt="Portfolio"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <div>
-              <h2 class="speech-bubble text-lg">
-                <span style="color: red">Portfolio</span>: My Super Projects!
-              </h2>
-              <p>
-                Check out some of my latest work.
-                <span
-                  style="
-                    color: red;
-                    background-color: yellow;
-                    font-size: large;
-                  "
-                >
-                  I am working on a CHIP-8 emulator to conquer this shitty
-                  world!!!
-                </span>
-              </p>
-              <ul class="list-disc pl-5">
-                <li>Project A: Employee Management (React, Spring)</li>
-                <li>Project B: Minigre & rttpserver (rust)</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div
-          id="section-experience"
-          class="comic-panel mb-8 hidden"
-        >
-           <div class="flex flex-col items-center">
-            <div
-              class="mb-4 w-full h-[200px] flex items-center justify-center border-4 border-black image-red-shadow"
-            >
-              <img
-                src="/images/luffy.png"
-                alt="luffy"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <div>
-              <h2 class="speech-bubble text-lg">
-                <span style="color: red">Experience</span>: Battles Won!
-              </h2>
-              <p
-                style="
-                  color: red;
-                  background-color: yellow;
-                  font-size: large;
-                "
+          <div>
+            <h2 class="speech-bubble text-lg">
+              <span style="color: red">About Me</span>: Developer
+              Extraordinaire!
+            </h2>
+            <p>
+              Greetings,
+              <span
+                style="color: red; background-color: yellow; font-size: large"
+                >I am Biswajit Shaw! A full-stack developer</span
               >
-                Zero battles won☹️
-              </p>
-            </div>
+              with a passion for building exciting and robust web applications.
+              My specialty is bringing complex ideas to life with clean,
+              efficient code.
+            </p>
+            <p>
+              When I'm not coding, I'm probably reading a comic book or fueling
+              up on coffee!
+            </p>
           </div>
         </div>
+      </div>
 
-        <div
-          id="section-contact"
-          class="comic-panel mb-8 hidden"
-        >
-          <div class="flex flex-col items-center">
-            <div
-              class="mb-4 w-full h-[200px] flex items-center justify-center border-4 border-black image-red-shadow"
-            >
-              <img
-                src="/images/bat-signal.png"
-                alt="Bat Signal"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <div>
-              <h2 class="speech-bubble text-lg">
-                <span style="color: red">Contact Me</span>: Send the Bat-Signal!
-              </h2>
-              <p>
-                <span
-                  style="
-                    color: red;
-                    background-color: yellow;
-                    font-size: large;
-                  "
-                >
-                  The best way to reach me is through email:
-                  biswajitshaw220@gmail.com
-                </span>
-                or connect with me on LinkedIn.
-              </p>
-            </div>
+      <div id="section-portfolio" class="comic-panel mb-8 hidden">
+        <div class="flex flex-col items-center">
+          <div
+            class="mb-4 w-full h-[200px] flex items-center justify-center border-4 border-black image-red-shadow"
+          >
+            <img
+              src="/images/portfolio.jpg"
+              alt="Portfolio"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div>
+            <h2 class="speech-bubble text-lg">
+              <span style="color: red">Portfolio</span>: My Super Projects!
+            </h2>
+            <p>
+              Check out some of my latest work.
+              <span
+                style="color: red; background-color: yellow; font-size: large"
+              >
+                I am working on a CHIP-8 emulator to conquer this shitty
+                world!!!
+              </span>
+            </p>
+            <ul class="list-disc pl-5">
+              <li>Project A: Employee Management (React, Spring)</li>
+              <li>Project B: Minigre & rttpserver (rust)</li>
+            </ul>
           </div>
         </div>
+      </div>
+
+      <div id="section-experience" class="comic-panel mb-8 hidden">
+        <div class="flex flex-col items-center">
+          <div
+            class="mb-4 w-full h-[200px] flex items-center justify-center border-4 border-black image-red-shadow"
+          >
+            <img
+              src="/images/luffy.png"
+              alt="luffy"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div>
+            <h2 class="speech-bubble text-lg">
+              <span style="color: red">Experience</span>: Battles Won!
+            </h2>
+            <p style="color: red; background-color: yellow; font-size: large">
+              Zero battles won☹️
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div id="section-contact" class="comic-panel mb-8 hidden">
+        <div class="flex flex-col items-center">
+          <div
+            class="mb-4 w-full h-[200px] flex items-center justify-center border-4 border-black image-red-shadow"
+          >
+            <img
+              src="/images/bat-signal.png"
+              alt="Bat Signal"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div>
+            <h2 class="speech-bubble text-lg">
+              <span style="color: red">Contact Me</span>: Send the Bat-Signal!
+            </h2>
+            <p>
+              <span
+                style="color: red; background-color: yellow; font-size: large"
+              >
+                The best way to reach me is through email:
+                biswajitshaw220@gmail.com
+              </span>
+              or connect with me on LinkedIn.
+            </p>
+          </div>
+        </div>
+      </div>
     </main>
 
     <div
       class="flex justify-between items-center w-full px-4 py-3 fixed bottom-0 left-0 z-40 bg-yellow-400 border-t-4 border-black"
     >
-      <button id="prevPage" class="comic-link py-1 px-3 text-base">⬅️ Prev</button>
-      <div id="sectionTitle" class="text-xl font-bold" style="font-family: 'Bangers', cursive; color: #e91e63;">ABOUT ME</div>
-      <button id="nextPage" class="comic-link py-1 px-3 text-base">Next ➡️</button>
+      <button id="prevPage" class="comic-link py-1 px-3 text-base">
+        ⬅️ Prev
+      </button>
+      <div
+        id="sectionTitle"
+        class="text-xl font-bold"
+        style="font-family: 'Bangers', cursive; color: #e91e63"
+      >
+        ABOUT ME
+      </div>
+      <button id="nextPage" class="comic-link py-1 px-3 text-base">
+        Next ➡️
+      </button>
     </div>
 
-    <script src="mobile-script.js"></script> 
+    <script src="mobile-script.js"></script>
   </body>
 </html>
