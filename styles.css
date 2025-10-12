@@ -71,3 +71,8 @@ body {
   border-right: 0;
   margin-left: -10px;
 }
+
+.image-red-shadow {
+  /* This creates a large red shadow offset to the bottom-right */
+  box-shadow: 8px 8px 0px #ef4444;
+}

@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="styles.css" />
     <title>Biswajit Shaw | Portfolio</title>
   </head>
+
   <body>
     <!-- Left Sidebar: In-page links -->
     <aside
@@ -25,10 +26,6 @@
       <button class="comic-link" data-section="experience">Experience</button>
       <button class="comic-link" data-section="contact">Contact Me</button>
     </aside>
-
-    <aside
-      class="comic-sidebar fixed top-1/2 -translate-y-1/2 right-4 h-auto w-16 bg-blue-400 flex flex-col items-center py-8 px-2 z-30 space-y-8"
-    ></aside>
 
     <!-- Right Sidebar: Social Icons -->
     <aside
@@ -84,63 +81,87 @@
       <!-- Add more icons as needed -->
     </aside>
 
-    <!-- Main Content -->
-    <main class="my-16 px-8 max-w-5xl mx-auto">
-      <div id="section-about" class="comic-panel mb-8" style="overflow-y: auto">
-        <h2>About Me: Developer Extraordinaire!</h2>
-        <p>
-          Greetings, I am Biswajit Shaw! A full-stack developer with a passion
-          for building exciting and robust web applications. My specialty is
-          bringing complex ideas to life with clean, efficient code.
-        </p>
-        <p>
-          When I'm not coding, I'm probably reading a comic book or fueling up
-          on coffee!
-        </p>
-      </div>
+    <!-- Main Content: Add gap from sidebars using mx-64 -->
+    <main
+      class="fixed inset-0 flex items-center justify-center z-10 pointer-events-none"
+    >
+      <div class="mx-64 my-16 px-8 max-w-5xl w-full pointer-events-auto">
+        <div
+          id="section-about"
+          class="comic-panel mb-8"
+          style="overflow-y: auto"
+        >
+          <div class="flex items-center">
+            <div class="flex-1">
+              <h2 class="speech-bubble" style="font-size: 22px">
+                Developer Extraordinaire!
+              </h2>
+              <p>
+                Greetings, I am Biswajit Shaw! A full-stack developer with a
+                passion for building exciting and robust web applications. My
+                specialty is bringing complex ideas to life with clean,
+                efficient code.
+              </p>
+              <p>
+                When I'm not coding, I'm probably reading a comic book or
+                fueling up on coffee!
+              </p>
+            </div>
+            <div
+              class="ml-8 w-[300px] h-[300px] flex items-center justify-center border-4 border-black image-red-shadow"
+            >
+              <img
+                src="/images/me.png"
+                alt="Biswajit Shaw"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
 
-      <div
-        id="section-portfolio"
-        class="comic-panel mb-8 hidden"
-        style="overflow-y: auto"
-      >
-        <h2>Portfolio: My Super Projects!</h2>
-        <p>
-          Check out some of my latest work. I've built a superhero database app
-          and a villain tracking system.
-        </p>
-        <ul>
-          <li>**Project A:** The Hero Registry (React, Node.js)</li>
-          <li>**Project B:** Cosmic Commerce Platform (Vue, Express)</li>
-        </ul>
-      </div>
+        <div
+          id="section-portfolio"
+          class="comic-panel mb-8 hidden"
+          style="overflow-y: auto"
+        >
+          <h2>Portfolio: My Super Projects!</h2>
+          <p>
+            Check out some of my latest work. I've built a superhero database
+            app and a villain tracking system.
+          </p>
+          <ul>
+            <li>Project A: The Hero Registry (React, Node.js)</li>
+            <li>Project B: Cosmic Commerce Platform (Vue, Express)</li>
+          </ul>
+        </div>
 
-      <div
-        id="section-experience"
-        class="comic-panel mb-8 hidden"
-        style="overflow-y: auto"
-      >
-        <h2>Experience: Battles Won!</h2>
-        <p>
-          **Lead Developer at Stark Industries (2020-Present):** Developed the
-          next-gen AI for Jarvis.
-        </p>
-        <p>
-          **Junior Coder at Wayne Enterprises (2018-2020):** Maintained Gotham's
-          internal network.
-        </p>
-      </div>
+        <div
+          id="section-experience"
+          class="comic-panel mb-8 hidden"
+          style="overflow-y: auto"
+        >
+          <h2>Experience: Battles Won!</h2>
+          <p>
+            Lead Developer at Stark Industries (2020-Present): Developed the
+            next-gen AI for Jarvis.
+          </p>
+          <p>
+            Junior Coder at Wayne Enterprises (2018-2020): Maintained Gotham's
+            internal network.
+          </p>
+        </div>
 
-      <div
-        id="section-contact"
-        class="comic-panel mb-8 hidden"
-        style="overflow-y: auto"
-      >
-        <h2>Contact Me: Send the Bat-Signal!</h2>
-        <p>
-          The best way to reach me is through email: biswajit.shaw@email.com or
-          connect with me on LinkedIn.
-        </p>
+        <div
+          id="section-contact"
+          class="comic-panel mb-8 hidden"
+          style="overflow-y: auto"
+        >
+          <h2>Contact Me: Send the Bat-Signal!</h2>
+          <p>
+            The best way to reach me is through email: biswajit.shaw@email.com
+            or connect with me on LinkedIn.
+          </p>
+        </div>
       </div>
     </main>
 
