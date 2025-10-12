@@ -1,13 +1,6 @@
 body {
   font-family: "Bangers", cursive, sans-serif;
   background: #f9f6f2;
-  /* --- NEW BACKGROUND IMAGE STYLES --- */
-  background-image: url("/images/spidey.png"); /* ⬅️ Update this path */
-  background-size: cover; /* Ensures the image covers the entire viewport */
-  background-attachment: fixed; /* Keeps the image in place when the user scrolls */
-  background-position: center; /* Centers the image in the viewport */
-  background-repeat: no-repeat; /* Prevents the image from tiling */
-  /* --- /NEW BACKGROUND IMAGE STYLES --- */
 }
 .comic-sidebar {
   border: 4px solid #222;
