@@ -13,243 +13,190 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <script src="m-dot.js"></script>
-    <title>Biswajit Shaw | Portfolio</title>
+    <title>Biswajit Shaw | Comic Portfolio</title>
   </head>
 
-  <body>
-    <!-- Left Sidebar: In-page links -->
-    <aside
-      class="comic-sidebar fixed top-1/2 -translate-y-1/2 left-4 h-auto w-44 bg-yellow-400 flex flex-col items-center py-8 px-4 z-30"
+  <body class="bg-[#f9f6f2] min-h-screen">
+    <header
+      class="md:hidden fixed top-0 left-0 w-full bg-yellow-400 border-b-4 border-black z-50 p-4 flex justify-between items-center"
     >
-      <button class="comic-link" data-section="about">About Me</button>
-      <button class="comic-link" data-section="portfolio">Portfolio</button>
-      <button class="comic-link" data-section="experience">Experience</button>
-      <button class="comic-link" data-section="contact">Contact Me</button>
+      <span class="text-2xl font-bold font-bangers">Biswajit Shaw</span>
+      <button id="hamburgerBtn" class="comic-link py-1 px-3 text-sm">
+        MENU
+      </button>
+    </header>
+
+    <div
+      id="mobileMenu"
+      class="fixed inset-0 bg-yellow-400 z-40 hidden flex-col items-center justify-center space-y-6"
+    >
+      <button
+        id="closeMenuBtn"
+        class="absolute top-4 right-4 comic-link py-1 px-3"
+      >
+        X
+      </button>
+
+      <button class="comic-link w-64 text-center nav-btn" data-section="about">
+        About Me
+      </button>
+      <button
+        class="comic-link w-64 text-center nav-btn"
+        data-section="portfolio"
+      >
+        Portfolio
+      </button>
+      <button
+        class="comic-link w-64 text-center nav-btn"
+        data-section="experience"
+      >
+        Experience
+      </button>
+      <button
+        class="comic-link w-64 text-center nav-btn"
+        data-section="contact"
+      >
+        Contact Me
+      </button>
+    </div>
+
+    <aside
+      class="hidden md:flex comic-sidebar fixed top-1/2 -translate-y-1/2 left-4 h-auto w-44 bg-yellow-400 flex-col items-center py-8 px-4 z-30"
+    >
+      <button class="comic-link nav-btn" data-section="about">About Me</button>
+      <button class="comic-link nav-btn" data-section="portfolio">
+        Portfolio
+      </button>
+      <button class="comic-link nav-btn" data-section="experience">
+        Experience
+      </button>
+      <button class="comic-link nav-btn" data-section="contact">
+        Contact Me
+      </button>
     </aside>
 
-    <!-- Right Sidebar: Social Icons -->
     <aside
-      class="comic-sidebar fixed top-1/2 -translate-y-1/2 right-4 h-auto w-16 bg-blue-400 flex flex-col items-center py-8 px-2 z-30 space-y-8"
+      class="hidden md:flex comic-sidebar fixed top-1/2 -translate-y-1/2 right-4 h-auto w-20 bg-blue-400 flex-col items-center py-8 px-2 z-30 space-y-6"
     >
-      <a href="https://github.com/thegoddo" target="_blank" class="comic-icon">
-        <!-- GitHub SVG -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-8 w-8"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.415-4.033-1.415-.546-1.387-1.333-1.757-1.333-1.757-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 013.003-.404c1.018.005 2.045.138 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.371.823 1.102.823 2.222v3.293c0 .322.218.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-          />
-        </svg>
+      <a
+        href="https://github.com/thegoddo"
+        target="_blank"
+        class="comic-icon p-1"
+      >
+        <img
+          src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg"
+          alt="Github"
+          width="32"
+          height="32"
+        />
       </a>
       <a
         href="https://linkedin.com/in/thegoddo"
         target="_blank"
-        class="comic-icon"
+        class="comic-icon p-1"
       >
-        <!-- LinkedIn SVG -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-8 w-8"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.838-1.563 3.036 0 3.6 2.001 3.6 4.601v5.595z"
-          />
-        </svg>
+        <img
+          src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg"
+          alt="LinkedIn"
+          width="32"
+          height="32"
+        />
       </a>
       <a
         href="/files/resume.pdf"
-        download="resume.pdf"
-        target="_blank"
-        class="comic-icon"
+        download
+        class="comic-icon flex justify-center items-center h-10 w-10 font-bangers bg-red-500 text-white border-2 border-black"
       >
-        <!-- Fixed height and width for PDF SVG icon -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="48"
-          height="48"
-          viewBox="0 0 75.320129 92.604164"
-        >
-          <g transform="translate(53.548057 -183.975276) scale(1.4843)">
-            <path
-              fill="#ff2116"
-              d="M-29.632812 123.94727c-3.551967 0-6.44336 2.89347-6.44336 6.44531v49.49804c0 3.55185 2.891393 6.44532 6.44336 6.44532H8.2167969c3.5519661 0 6.4433591-2.89335 6.4433591-6.44532v-40.70117s.101353-1.19181-.416015-2.35156c-.484969-1.08711-1.275391-1.84375-1.275391-1.84375a1.0584391 1.0584391 0 0 0-.0059-.008l-9.3906254-9.21094a1.0584391 1.0584391 0 0 0-.015625-.0156s-.8017392-.76344-1.9902344-1.27344c-1.39939552-.6005-2.8417968-.53711-2.8417968-.53711l.021484-.002z"
-            />
-            <path
-              fill="#f5f5f5"
-              d="M-29.632812 126.06445h28.3789058a1.0584391 1.0584391 0 0 0 .021484 0s1.13480448.011 1.96484378.36719c.79889772.34282 1.36536982.86176 1.36914062.86524.0000125.00001.00391.004.00391.004l9.3671868 9.18945s.564354.59582.837891 1.20899c.220779.49491.234375 1.40039.234375 1.40039a1.0584391 1.0584391 0 0 0-.002.0449v40.74609c0 2.41592-1.910258 4.32813-4.3261717 4.32813H-29.632812c-2.415914 0-4.326172-1.91209-4.326172-4.32813v-49.49804c0-2.41603 1.910258-4.32813 4.326172-4.32813z"
-            />
-            <path
-              fill="#ff2116"
-              d="M-23.40766 161.09299c-1.45669-1.45669.11934-3.45839 4.39648-5.58397l2.69124-1.33743 1.04845-2.29399c.57665-1.26169 1.43729-3.32036 1.91254-4.5748l.8641-2.28082-.59546-1.68793c-.73217-2.07547-.99326-5.19438-.52872-6.31588.62923-1.51909 2.69029-1.36323 3.50626.26515.63727 1.27176.57212 3.57488-.18329 6.47946l-.6193 2.38125.5455.92604c.30003.50932 1.1764 1.71867 1.9475 2.68743l1.44924 1.80272 1.8033728-.23533c5.72900399-.74758 7.6912472.523 7.6912472 2.34476 0 2.29921-4.4984914 2.48899-8.2760865-.16423-.8499666-.59698-1.4336605-1.19001-1.4336605-1.19001s-2.3665326.48178-3.531704.79583c-1.202707.32417-1.80274.52719-3.564509 1.12186 0 0-.61814.89767-1.02094 1.55026-1.49858 2.4279-3.24833 4.43998-4.49793 5.1723-1.3991.81993-2.86584.87582-3.60433.13733zm2.28605-.81668c.81883-.50607 2.47616-2.46625 3.62341-4.28553l.46449-.73658-2.11497 1.06339c-3.26655 1.64239-4.76093 3.19033-3.98386 4.12664.43653.52598.95874.48237 2.01093-.16792zm21.21809-5.95578c.80089-.56097.68463-1.69142-.22082-2.1472-.70466-.35471-1.2726074-.42759-3.1031574-.40057-1.1249.0767-2.9337647.3034-3.2403347.37237 0 0 .993716.68678 1.434896.93922.58731.33544 2.0145161.95811 3.0565161 1.27706 1.02785.31461 1.6224.28144 2.0729-.0409zm-8.53152-3.54594c-.4847-.50952-1.30889-1.57296-1.83152-2.3632-.68353-.89643-1.02629-1.52887-1.02629-1.52887s-.4996 1.60694-.90948 2.57394l-1.27876 3.16076-.37075.71695s1.971043-.64627 2.97389-.90822c1.0621668-.27744 3.21787-.70134 3.21787-.70134zm-2.74938-11.02573c.12363-1.0375.1761-2.07346-.15724-2.59587-.9246-1.01077-2.04057-.16787-1.85154 2.23517.0636.8084.26443 2.19033.53292 3.04209l.48817 1.54863.34358-1.16638c.18897-.64151.47882-2.02015.64411-3.06364z"
-            />
-            <path
-              fill="#2c2c2c"
-              d="M-20.930423 167.83862h2.364986q1.133514 0 1.840213.2169.706698.20991 1.189489.9446.482795.72769.482795 1.75625 0 .94459-.391832 1.6233-.391833.67871-1.056548.97958-.65772.30087-2.02913.30087h-.818651v3.72941h-1.581322zm1.581322 1.22447v3.33058h.783664q1.049552 0 1.44838-.39184.405826-.39183.405826-1.27345 0-.65772-.265887-1.06355-.265884-.41282-.587747-.50378-.314866-.098-1.000572-.098zm5.50664-1.22447h2.148082q1.560333 0 2.4909318.55276.9375993.55276 1.4133973 1.6443.482791 1.09153.482791 2.42096 0 1.3994-.4338151 2.49793-.4268149 1.09153-1.3154348 1.76324-.8816233.67172-2.5189212.67172h-2.267031zm1.581326 1.26645v7.018h.657715q1.378411 0 2.001144-.9516.6227329-.95858.6227329-2.5539 0-3.5125-2.6238769-3.5125zm6.4722254-1.26645h5.30372941v1.26645H-4.2075842v2.85478h2.9807225v1.26646h-2.9807225v4.16322h-1.5813254z"
-              font-family="Franklin Gothic Medium Cond"
-              letter-spacing="0"
-              style="
-                line-height: 125%;
-                -inkscape-font-specification: 'Franklin Gothic Medium Cond';
-              "
-              word-spacing="4.26000023"
-            />
-          </g>
-        </svg>
+        CV
       </a>
-      <!-- Add more icons as needed -->
     </aside>
 
-    <!-- Main Content: Add gap from sidebars using mx-64 -->
     <main
-      class="fixed inset-0 flex items-center justify-center z-10 pointer-events-none"
+      class="pt-24 px-4 pb-12 md:pt-0 md:pb-0 md:mx-64 md:my-16 min-h-screen flex items-start md:items-center justify-center pointer-events-none"
     >
-      <div class="mx-64 my-16 px-8 max-w-5xl w-full pointer-events-auto">
-        <div
-          id="section-about"
-          class="comic-panel mb-8"
-          style="overflow-y: auto"
-        >
-          <div class="flex items-center">
-            <div class="flex-1">
-              <h2 class="speech-bubble" style="font-size: 22px">
+      <div class="max-w-5xl w-full pointer-events-auto">
+        <div id="section-about" class="comic-panel mb-8">
+          <div class="flex flex-col md:flex-row items-center">
+            <div class="flex-1 order-2 md:order-1">
+              <h2 class="speech-bubble text-xl md:text-2xl">
                 <span style="color: red">About Me</span>: Developer
                 Extraordinaire!
               </h2>
               <p>
                 Greetings,
                 <span
-                  style="
-                    color: red;
-                    background-color: yellow;
-                    font-size: xx-large;
-                  "
-                  >I am Biswajit Shaw! A full-stack developer</span
+                  class="bg-yellow-300 px-1 border-2 border-black -rotate-1 inline-block font-bold"
+                  >I am Biswajit Shaw!</span
                 >
-                with a passion for building exciting and robust web
-                applications. My specialty is bringing complex ideas to life
-                with clean, efficient code.
-              </p>
-              <p>
-                When I'm not coding, I'm probably reading a comic book or
-                fueling up on coffee!
+                A full-stack developer with a passion for building robust
+                applications.
               </p>
             </div>
             <div
-              class="ml-8 w-[300px] h-[300px] flex items-center justify-center border-4 border-black image-red-shadow"
+              class="mb-6 md:mb-0 md:ml-8 order-1 md:order-2 w-full md:w-[300px] flex justify-center"
             >
-              <img
-                src="/images/me.png"
-                alt="Biswajit Shaw"
-                class="w-full h-full object-cover"
-              />
+              <div
+                class="w-[200px] h-[200px] md:w-[250px] md:h-[250px] border-4 border-black image-red-shadow overflow-hidden bg-gray-200"
+              >
+                <img
+                  src="/images/me.png"
+                  alt="Biswajit"
+                  class="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
 
-        <div
-          id="section-portfolio"
-          class="comic-panel mb-8 hidden"
-          style="overflow-y: auto"
-        >
-          <div class="flex items-center">
-            <div class="flex-1">
-              <h2 class="speech-bubble" style="font-size: 22px">
-                <span style="color: red">Portfolio</span>: My Super Projects!
-              </h2>
-              <p>
-                Check out some of my latest work.
-                <span
-                  style="
-                    color: red;
-                    background-color: yellow;
-                    font-size: xx-large;
-                  "
-                >
-                  I am working on a CHIP-8 emulator to conquer this shitty
-                  world!!!
-                </span>
-              </p>
-              <ul>
-                <li>Project A: Employee Management (React, Spring)</li>
-                <li>Project B: Minigre & rttpserver (rust)</li>
-              </ul>
-            </div>
-            <div
-              class="ml-8 w-[200px] h-[200px] flex items-center justify-center border-4 border-black image-red-shadow"
+        <div id="section-portfolio" class="comic-panel mb-8 hidden">
+          <h2 class="speech-bubble text-xl md:text-2xl">
+            <span style="color: red">Portfolio</span>: My Super Projects!
+          </h2>
+          <p class="mb-4">
+            <span class="bg-yellow-300 px-1 border-2 border-black inline-block"
+              >Current Mission:</span
             >
-              <img
-                src="/images/portfolio.jpg"
-                alt="Portfolio"
-                class="w-full h-full object-cover"
-              />
-            </div>
-          </div>
+            Building a CHIP-8 emulator to conquer the tech world!
+          </p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>
+              <strong>Project A:</strong> Employee Management (React, Spring)
+            </li>
+            <li><strong>Project B:</strong> Minigre & rttpserver (Rust)</li>
+          </ul>
         </div>
 
-        <div
-          id="section-experience"
-          class="comic-panel mb-8 hidden"
-          style="overflow-y: auto"
-        >
-          <div class="flex items-center">
+        <div id="section-experience" class="comic-panel mb-8 hidden">
+          <div class="flex flex-col md:flex-row items-center">
             <div class="flex-1">
-              <h2 class="speech-bubble" style="font-size: 22px">
+              <h2 class="speech-bubble text-xl md:text-2xl">
                 <span style="color: red">Experience</span>: Battles Won!
               </h2>
               <p
-                style="
-                  color: red;
-                  background-color: yellow;
-                  font-size: xx-large;
-                "
+                class="text-xl bg-yellow-300 p-2 border-2 border-black inline-block rotate-1"
               >
-                Zero battles won☹️
+                Zero battles won ☹️ (Yet!)
               </p>
             </div>
             <div
-              class="ml-8 w-[200px] h-[200px] flex items-center justify-center border-4 border-black image-red-shadow"
+              class="mt-6 md:mt-0 md:ml-8 w-[200px] h-[200px] border-4 border-black image-red-shadow overflow-hidden"
             >
               <img
                 src="/images/luffy.png"
-                alt="luffy"
+                alt="Luffy"
                 class="w-full h-full object-cover"
               />
             </div>
           </div>
         </div>
 
-        <div
-          id="section-contact"
-          class="comic-panel mb-8 hidden"
-          style="overflow-y: auto"
-        >
-          <div class="flex items-center">
-            <div class="flex-1">
-              <h2 class="speech-bubble" style="font-size: 22px">
-                <span style="color: red">Contact Me</span>: Send the Bat-Signal!
-              </h2>
-              <p>
-                <span
-                  style="
-                    color: red;
-                    background-color: yellow;
-                    font-size: xx-large;
-                  "
-                >
-                  The best way to reach me is through email:
-                  biswajitshaw220@gmail.com
-                </span>
-                or connect with me on LinkedIn.
-              </p>
-            </div>
+        <div id="section-contact" class="comic-panel mb-8 hidden">
+          <div class="flex flex-col items-center">
+            <h2 class="speech-bubble text-xl md:text-2xl">
+              <span style="color: red">Contact Me</span>: Send the Bat-Signal!
+            </h2>
             <div
-              class="ml-8 w-[200px] h-[200px] flex items-center justify-center border-4 border-black image-red-shadow"
+              class="w-[200px] h-[200px] border-4 border-black image-red-shadow overflow-hidden mb-6"
             >
               <img
                 src="/images/bat-signal.png"
@@ -257,6 +204,9 @@
                 class="w-full h-full object-cover"
               />
             </div>
+            <p class="text-center bg-yellow-300 p-2 border-2 border-black">
+              biswajitshaw220@gmail.com
+            </p>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@ body {
   font-family: "Bangers", cursive, sans-serif;
   background: #f9f6f2;
   /* --- NEW BACKGROUND IMAGE STYLES --- */
-  background-image: url("/images/spidey.png"); /* ⬅️ Update this path */
+  background-image: url("/images/spidey.png");
   background-size: cover; /* Ensures the image covers the entire viewport */
   background-attachment: fixed; /* Keeps the image in place when the user scrolls */
   background-position: center; /* Centers the image in the viewport */
@@ -58,6 +58,10 @@ body {
   padding: 2rem;
   margin-bottom: 2rem;
   border-radius: 12px;
+
+  background-color: #fff;
+  background-image: radial-gradient(#d1d5db, transparent 1px);
+  background-size: 20px 20px;
 }
 .speech-bubble {
   position: relative;
@@ -86,14 +90,40 @@ body {
   box-shadow: 8px 8px 0px #ef4444;
 }
 
-p, li, span.text_base {
+p,
+li,
+span.text_base {
   font-family: "Inter", sans-serif;
   line-height: 1.6;
   font-weight: 500;
   color: #333;
 }
 
-h1, h2, h3, .comic-link, .speech-bubble {
+h1,
+h2,
+h3,
+.comic-link,
+.speech-bubble {
   font-family: "Bangers", cursive;
   letter-spacing: 1px;
+}
+
+/* Define the pop animation */
+@keyframes comicPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(-2deg); /* Start small and tilted */
+  }
+  70% {
+    transform: scale(1.02) rotate(1deg); /* Overshoot slightly */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg); /* Settle */
+  }
+}
+
+/* Apply it when the hidden class is REMOVED */
+.comic-panel:not(.hidden) {
+  animation: comicPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
