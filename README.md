@@ -4,8 +4,8 @@
 
 A retro-style, interactive comic book portfolio website. Built with a focus on "game juice," tactile feedback, and hidden Easter eggs.
 
-![Project Preview](https://via.placeholder.com/800x400?text=Comic+Portfolio+Preview)
-*(Replace this link with a real screenshot of your site!)*
+![Project Preview](./ss/Screenshot_20251207_161845.png)
+<!-- *(Replace this link with a real screenshot of your site!)* -->
 
 ## 🌟 Key Features
 
