@@ -8,6 +8,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet" />
+  <link rel="icon" href="/effects/zap.png" type="image/png">
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -53,11 +54,7 @@
       </div>
       <a href="/files/resume.pdf" download aria-label="Download Resume"
         class="cv-attention comic-icon flex justify-center items-center h-12 w-12 bg-red-500 text-white border-2 border-black hover:bg-red-600">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
-          class="w-6 h-6">
-          <path stroke-linecap="round" stroke-linejoin="round"
-            d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M12 9.75V1.5m0 0L8.25 5.25M12 1.5 15.75 5.25" />
-        </svg>
+        <img width="48" height="48" src="https://img.icons8.com/material-outlined/48/pdf-2.png" alt="pdf-2" />
       </a>
     </div>
   </aside>
@@ -110,7 +107,7 @@
         </div>
         <div class="project-grid">
           <div class="comic-card group">
-            <img src="/images/wow.png" class="sticker" alt="WOW!">
+            <img src="/effects/wow.png" class="sticker" alt="WOW!">
             <div class="card-header bg-blue-100 group-hover:bg-blue-200 transition-colors">
               <span class="font-bangers text-5xl text-blue-500 opacity-60">EMP-SYS</span>
             </div>
@@ -131,7 +128,7 @@
             </div>
           </div>
           <div class="comic-card group">
-            <img src="/images/zap.png" class="sticker"
+            <img src="/effects/zap.png" class="sticker"
               style="top:auto; bottom:-15px; right:-15px; transform: rotate(-10deg);" alt="ZAP!">
             <div class="card-header bg-orange-100 group-hover:bg-orange-200 transition-colors">
               <span class="font-bangers text-5xl text-orange-500 opacity-60">RUST-E</span>
@@ -188,23 +185,72 @@
 
       <div id="section-contact" class="comic-panel mb-8 hidden">
         <div class="flex flex-col items-center text-center">
-          <h2 class="dynamic-header speech-bubble text-xl md:text-2xl">
-            <span style="color: red">Alert</span>: Signal the Hero!
+          <h2 class="dynamic-header speech-bubble text-xl md:text-2xl mb-6">
+            <span style="color: red">ALERT</span>: Signal the Hero!
           </h2>
+
           <div
-            class="w-[200px] h-[200px] border-4 border-black image-red-shadow overflow-hidden mb-8 bg-yellow-50 flex items-center justify-center">
+            class="w-[120px] h-[120px] border-4 border-black image-red-shadow overflow-hidden mb-6 bg-yellow-50 flex items-center justify-center rounded-full">
             <img src="/images/bat-signal.png" alt="Bat Signal" class="w-full h-full object-cover">
           </div>
-          <p class="mb-6 text-xl max-w-lg font-bold">
-            Citizens! Do you have a project in peril? A bug that won't die?
-            <br><span class="text-blue-600">Alfred is standing by.</span>
+
+          <p class="mb-8 text-xl font-bold max-w-2xl">
+            The city needs saving? Or maybe you just want to talk code?
+            <br><span class="text-blue-600">Choose your secure channel below:</span>
           </p>
-          <a href="mailto:biswajitshaw220@gmail.com"
-            class="comic-link text-xl px-10 py-4 bg-red-500 text-white hover:bg-red-600 hover:text-white transform hover:scale-110 hover:-rotate-2 transition-all shadow-[6px_6px_0_#000]">
-            SEND URGENT TRANSMISSION
-          </a>
-          <p class="mt-6 text-sm text-gray-500 font-inter italic">
-            (Please don't use the giant sky-beam, the neighbors complain.)
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+
+            <a href="mailto:biswajitshaw220@gmail.com"
+              class="comic-card group hover:no-underline transform transition-transform hover:-translate-y-2 cursor-pointer">
+              <div
+                class="h-24 bg-red-500 flex items-center justify-center border-b-4 border-black group-hover:bg-red-400 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white"
+                  class="w-12 h-12">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                </svg>
+              </div>
+              <div class="p-4 bg-white">
+                <h3 class="font-bangers text-xl mb-1">Urgent Mail</h3>
+                <p class="text-sm text-gray-600 font-inter">Direct transmission to the Batcave.</p>
+              </div>
+            </a>
+
+            <a href="https://linkedin.com/in/thegoddo" target="_blank"
+              class="comic-card group hover:no-underline transform transition-transform hover:-translate-y-2 cursor-pointer">
+              <div
+                class="h-24 bg-blue-600 flex items-center justify-center border-b-4 border-black group-hover:bg-blue-500 transition-colors">
+                <svg viewBox="0 0 24 24" fill="white" class="w-10 h-10">
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.838-1.563 3.036 0 3.6 2.001 3.6 4.601v5.595z" />
+                </svg>
+              </div>
+              <div class="p-4 bg-white">
+                <h3 class="font-bangers text-xl mb-1">Alliance Network</h3>
+                <p class="text-sm text-gray-600 font-inter">Connect for professional team-ups.</p>
+              </div>
+            </a>
+
+            <a href="https://github.com/thegoddo" target="_blank"
+              class="comic-card group hover:no-underline transform transition-transform hover:-translate-y-2 cursor-pointer">
+              <div
+                class="h-24 bg-gray-800 flex items-center justify-center border-b-4 border-black group-hover:bg-gray-700 transition-colors">
+                <svg viewBox="0 0 24 24" fill="white" class="w-10 h-10">
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.415-4.033-1.415-.546-1.387-1.333-1.757-1.333-1.757-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 013.003-.404c1.018.005 2.045.138 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.371.823 1.102.823 2.222v3.293c0 .322.218.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg>
+              </div>
+              <div class="p-4 bg-white">
+                <h3 class="font-bangers text-xl mb-1">Gadget Lab</h3>
+                <p class="text-sm text-gray-600 font-inter">Inspect the source code of my weapons.</p>
+              </div>
+            </a>
+
+          </div>
+
+          <p class="mt-8 text-sm text-gray-500 font-inter italic">
+            (Alfred checks these messages daily... usually.)
           </p>
         </div>
       </div>
