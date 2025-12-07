@@ -3,6 +3,16 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thegoddo.github.io/">
+  <meta property="og:title" content="Biswajit Shaw | The Full-Stack Sentinel">
+  <meta property="og:description"
+    content="A comic-book themed portfolio featuring React, Rust, and Web Development missions.">
+  <meta property="og:image" content="https://thegoddo.github.io/effects/zap.png">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Biswajit Shaw | The Full-Stack Sentinel">
+  <meta property="twitter:description" content="Check out my comic-book style developer portfolio!">
+  <meta property="twitter:image" content="https://thegoddo.github.io/effects/zap.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Biswajit Shaw | The Full-Stack Sentinel</title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -13,6 +23,12 @@
 </head>
 
 <body class="bg-[#f9f6f2] min-h-screen">
+
+  <div id="preloader"
+    class="fixed inset-0 z-[100] bg-yellow-400 flex flex-col items-center justify-center transition-opacity duration-500">
+    <h1 class="font-bangers text-6xl animate-pulse mb-4">LOADING...</h1>
+    <p class="font-bangers text-xl">"With great power comes great loading times..."</p>
+  </div>
 
   <header
     class="md:hidden fixed top-0 left-0 w-full bg-yellow-400 border-b-4 border-black z-50 p-4 flex justify-between items-center">

@@ -117,6 +117,15 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   showSection("about");
+  window.onload = function () {
+    const preloader = document.getElementById("preloader");
+    if (preloader) {
+      preloader.style.opacity = "0";
+      setTimeout(() => {
+        preloader.remove();
+      }, 500);
+    }
+  };
 });
 
 document.addEventListener("click", (e) => {
