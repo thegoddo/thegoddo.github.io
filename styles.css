@@ -15,18 +15,36 @@ body {
 }
 
 .comic-icon {
+  display: flex;
   border: 3px solid #222;
   border-radius: 50%;
   background: #fff;
-  box-shadow: 4px 4px 0 #e91e63;
-  transition: transform 0.1s, box-shadow 0.1s;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 1);
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: pointer;
+  position: relative;
+  z-index: 10;
+}
+
+.comic-icon:hover {
+  transform: scale(1.15) rotate(-3deg);
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 1);
+  background-color: #fff;
+}
+
+a[aria-label="Github"]:hover {
+  background-color: #f3f4f6;
+  color: #000;
+}
+
+a[aria-label="LinkedIn"]:hover {
+  background-color: #dbeafe;
+  color: #0077b5;
 }
 
 .comic-icon:active {
-  transform: scale(0.88) rotate(-8deg);
-  box-shadow: 2px 2px 0 #2196f3;
-  background: #ffe082;
+  transform: scale(0.95) translateY(2px);
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 1);
 }
 
 .comic-link {
@@ -280,4 +298,82 @@ h3,
   50% {
     transform: rotate(15deg) scale(1.1);
   }
+}
+
+
+/* --- Add to the bottom of styles.css --- */
+
+/* The "Ringing" Animation */
+@keyframes attentionShake {
+
+  0%,
+  85% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  87% {
+    transform: rotate(-10deg) scale(1.1);
+  }
+
+  89% {
+    transform: rotate(10deg) scale(1.1);
+  }
+
+  91% {
+    transform: rotate(-10deg) scale(1.1);
+  }
+
+  93% {
+    transform: rotate(10deg) scale(1.1);
+  }
+
+  95% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+.cv-attention {
+  /* Runs the shake animation every 3 seconds */
+  animation: attentionShake 3s ease-in-out infinite;
+  /* Make sure it sits above other things */
+  z-index: 50;
+  border-color: #ef4444;
+  /* Make the border red to stand out */
+}
+
+/* Pause animation when user tries to click it */
+.cv-attention:hover {
+  animation-play-state: paused;
+}
+
+/* The "HIRE ME" Speech Bubble */
+.hire-me-bubble {
+  position: absolute;
+  right: 120%;
+  /* Position it to the left of the sidebar */
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffeb3b;
+  border: 2px solid #000;
+  padding: 4px 8px;
+  font-family: 'Bangers', cursive;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  box-shadow: 2px 2px 0 #000;
+}
+
+/* The little triangle pointer for the bubble */
+.hire-me-bubble::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid #000;
 }

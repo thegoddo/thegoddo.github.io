@@ -1,36 +1,86 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // --- 1. Element Selection ---
   const contentPanels = document.querySelectorAll(".comic-panel");
-  const navButtons = document.querySelectorAll(".nav-btn"); // Selected both mobile and desktop buttons
-
+  const navButtons = document.querySelectorAll(".nav-btn");
   const hamburgerBtn = document.getElementById("hamburgerBtn");
   const closeMenuBtn = document.getElementById("closeMenuBtn");
   const mobileMenu = document.getElementById("mobileMenu");
 
+  const speechTitles = document.querySelectorAll(".dynamic-header");
+
+  // --- 2. State Tracking (NEW) ---
+  let currentActiveSection = "about"; // Default start section
+
+  // --- 3. Dialogues Data ---
+  const dialogues = {
+    about: `<span style="color: red">ORIGIN STORY</span>: The Man Behind the Mask`,
+    portfolio: `<span style="color: red">MISSION LOG</span>: The Collection!`,
+    experience: `<span style="color: red">BATTLE LOG</span>: The Training Arc`,
+    contact: `<span style="color: red">ALERT</span>: Signal the Hero!`,
+  };
+
+  // --- 4. Navigation Logic ---
   function showSection(sectionId) {
+    // Update the state so we know what to reset to
+    currentActiveSection = sectionId;
+
+    // Hide all panels
     contentPanels.forEach((panel) => {
       panel.classList.add("hidden");
     });
 
+    // Show target panel
     const targetPanel = document.getElementById(`section-${sectionId}`);
     if (targetPanel) {
       targetPanel.classList.remove("hidden");
     }
 
+    // Scroll to top
     window.scrollTo({ top: 0, behavior: "smooth" });
+
+    // Reset header text immediately to match the new section
+    if (dialogues[sectionId]) {
+      speechTitles.forEach((title) => {
+        title.innerHTML = dialogues[sectionId];
+      });
+    }
   }
 
+  // --- 5. Event Listeners ---
   navButtons.forEach((btn) => {
+    // Click Event (Switch Section)
     btn.addEventListener("click", () => {
       const section = btn.getAttribute("data-section");
       showSection(section);
 
-      if (!mobileMenu.classList.contains("hidden")) {
+      // Close mobile menu if open
+      if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
         mobileMenu.classList.add("hidden");
         mobileMenu.classList.remove("flex");
       }
     });
+
+    // Hover Enter (Preview Section Text)
+    btn.addEventListener("mouseenter", () => {
+      const section = btn.getAttribute("data-section");
+      if (dialogues[section]) {
+        speechTitles.forEach((title) => {
+          title.innerHTML = dialogues[section];
+        });
+      }
+    });
+
+    // Hover Leave (Reset to CURRENT Active Section, not always 'About')
+    btn.addEventListener("mouseleave", () => {
+      if (dialogues[currentActiveSection]) {
+        speechTitles.forEach((title) => {
+          title.innerHTML = dialogues[currentActiveSection];
+        });
+      }
+    });
   });
 
+  // --- 6. Mobile Menu Toggle ---
   if (hamburgerBtn && mobileMenu) {
     hamburgerBtn.addEventListener("click", () => {
       mobileMenu.classList.remove("hidden");
@@ -42,62 +92,9 @@ document.addEventListener("DOMContentLoaded", function () {
       mobileMenu.classList.remove("flex");
     });
   }
-  const speechTitles = document.querySelectorAll(".dynamic-header");
-  const defaultSpeech = `<span style="color: red">About Me</span>: Developer Extraordinaire!`;
-
-  const dialogues = {
-    about: `<span style="color: red">About Me</span>: Who is behind the mask?`,
-    portfolio: `<span style="color: blue">Portfolio</span>: Behold my creations!`,
-    experience: `<span style="color: green">Experience</span>: My battle history!`,
-    contact: `<span style="color: orange">Contact</span>: Send the signal now!`,
-  };
-
-  navButtons.forEach((btn) => {
-    btn.addEventListener("mouseenter", () => {
-      const section = btn.getAttribute("data-section");
-
-      if (dialogues[section]) {
-        speechTitles.forEach((title) => {
-          title.innerHTML = dialogues[section];
-        });
-      }
-    });
-
-    btn.addEventListener("mouseleave", () => {
-      speechTitles.forEach((title) => {
-        title.innerHTML = defaultSpeech;
-      });
-    });
-  });
-
-  //   const panels = document.querySelectorAll(".comic-panel");
-
-  //   panels.forEach((panel) => {
-  //     panel.addEventListener("mousemove", (e) => {
-  //       const rect = panel.getBoundingClientRect();
-  //       const x = e.clientX - rect.left;
-  //       const y = e.clientY - rect.top;
-
-  //       const xRotation = -1 * (((y - rect.height / 2) / rect.height) * 10);
-  //       const yRotation = ((x - rect.width / 2) / rect.width) * 10;
-
-  //       panel.style.transform = `perspective(1000px) scale(1.02) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
-  //     });
-
-  //     panel.addEventListener("mouseleave", () => {
-  //       panel.style.transform =
-  //         "perspective(1000px) scale(1) rotateX(0) rotateY(0)";
-  //       panel.style.transition = "transform 0.5s ease";
-  //     });
-
-  //     panel.addEventListener("mouseenter", () => {
-  //       panel.style.transition = "none";
-  //     });
-  //   });
 
   showSection("about");
 });
-
 document.addEventListener("click", (e) => {
   if (
     e.target.closest("a") ||
