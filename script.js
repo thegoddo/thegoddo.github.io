@@ -167,35 +167,106 @@ document.addEventListener("click", (e) => {
     el.remove();
   }, 500);
 });
+// --- ADVANCED CHEAT CODE ENGINE ---
+const pressedKeys = [];
+const secretCodes = {
+  // 1. KONAMI CODE (Toggle Villain Mode)
+  konami: {
+    sequence: ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'],
+    action: toggleVillainMode
+  },
+  // 2. GOD MODE (Type 'god')
+  god: {
+    sequence: ['g', 'o', 'd'],
+    action: toggleGodMode
+  },
+  // 3. DEBUG MODE (Type 'debug')
+  debug: {
+    sequence: ['d', 'e', 'b', 'u', 'g'],
+    action: toggleDebugMode
+  }
+};
 
-const secretCode = [
-  "ArrowUp",
-  "ArrowUp",
-  "ArrowDown",
-  "ArrowDown",
-  "ArrowLeft",
-  "ArrowRight",
-  "ArrowLeft",
-  "ArrowRight",
-  "b",
-  "a",
-];
-let inputSequence = [];
+document.addEventListener('keydown', (e) => {
+  pressedKeys.push(e.key);
+  
+  // Keep buffer only as long as the longest code (10 keys) to save memory
+  if (pressedKeys.length > 20) {
+    pressedKeys.shift();
+  }
 
-document.addEventListener("keydown", (e) => {
-  inputSequence.push(e.key);
-  inputSequence.splice(
-    -secretCode.length - 1,
-    inputSequence.length - secretCode.length
-  );
+  // Check every cheat code
+  Object.values(secretCodes).forEach(cheat => {
+    if (checkSequence(cheat.sequence)) {
+      cheat.action();
+      // Reset buffer so codes don't overlap
+      pressedKeys.length = 0; 
+    }
+  });
+});
 
-  if (inputSequence.join("").includes(secretCode.join(""))) {
-    // TRIGGER VILLAIN MODE
+function checkSequence(sequence) {
+  // Check if the end of pressedKeys matches the sequence
+  const pressedStr = pressedKeys.slice(-sequence.length).join(',');
+  const sequenceStr = sequence.join(',');
+  return pressedStr === sequenceStr;
+}
+
+// --- CHEAT EFFECTS ---
+
+// 1. Villain Mode (Invert Colors)
+let isVillain = false;
+function toggleVillainMode() {
+  isVillain = !isVillain;
+  if (isVillain) {
     alert("🦹 VILLAIN MODE ACTIVATED!");
     document.body.style.filter = "invert(1) hue-rotate(180deg)";
     document.body.style.transition = "filter 1s ease";
-
-    // Reset sequence
-    inputSequence = [];
+  } else {
+    alert("🦸 HERO MODE RESTORED!");
+    document.body.style.filter = "none";
   }
-});
+}
+
+// 2. God Mode (Golden Borders & Glow)
+let isGod = false;
+function toggleGodMode() {
+  isGod = !isGod;
+  const panels = document.querySelectorAll('.comic-panel, .comic-sidebar, .comic-card');
+  
+  if (isGod) {
+    alert("⚡ GOD MODE ACTIVATED!");
+    // Change borders to glowing gold
+    panels.forEach(p => {
+      p.style.borderColor = "#FFD700"; // Gold
+      p.style.boxShadow = "0 0 20px #FFD700"; // Glow
+    });
+    document.body.style.backgroundImage = "none"; // Remove Spidey
+    document.body.style.backgroundColor = "#fff"; // Holy white background
+  } else {
+    alert("⚡ MORTAL MODE RESTORED");
+    panels.forEach(p => {
+      p.style.borderColor = "";
+      p.style.boxShadow = "";
+    });
+    document.body.style.backgroundImage = "";
+    document.body.style.backgroundColor = "";
+  }
+}
+
+// 3. Debug Mode (Wireframes)
+let isDebug = false;
+function toggleDebugMode() {
+  isDebug = !isDebug;
+  if (isDebug) {
+    alert("🤖 DEBUG WIREFRAME ON");
+    const style = document.createElement('style');
+    style.id = 'debug-style';
+    style.innerHTML = `* { outline: 1px solid red !important; background: rgba(255,0,0,0.05) !important; }`;
+    document.head.appendChild(style);
+  } else {
+    alert("🤖 DEBUG OFF");
+    const style = document.getElementById('debug-style');
+    if (style) style.remove();
+  }
+}
