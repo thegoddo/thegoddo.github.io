@@ -3,17 +3,23 @@ body {
   background: #f9f6f2;
   /* --- NEW BACKGROUND IMAGE STYLES --- */
   background-image: url("/images/spidey.png");
-  background-size: cover; /* Ensures the image covers the entire viewport */
-  background-attachment: fixed; /* Keeps the image in place when the user scrolls */
-  background-position: center; /* Centers the image in the viewport */
-  background-repeat: no-repeat; /* Prevents the image from tiling */
+  background-size: cover;
+  /* Ensures the image covers the entire viewport */
+  background-attachment: fixed;
+  /* Keeps the image in place when the user scrolls */
+  background-position: center;
+  /* Centers the image in the viewport */
+  background-repeat: no-repeat;
+  /* Prevents the image from tiling */
   /* --- /NEW BACKGROUND IMAGE STYLES --- */
 }
+
 .comic-sidebar {
   border: 4px solid #222;
   box-shadow: 8px 8px 0 #ffeb3b;
   border-radius: 16px;
 }
+
 .comic-icon {
   border: 3px solid #222;
   border-radius: 50%;
@@ -22,11 +28,13 @@ body {
   transition: transform 0.1s, box-shadow 0.1s;
   cursor: pointer;
 }
+
 .comic-icon:active {
   transform: scale(0.88) rotate(-8deg);
   box-shadow: 2px 2px 0 #2196f3;
   background: #ffe082;
 }
+
 .comic-link {
   font-size: 1.5rem;
   font-weight: bold;
@@ -41,11 +49,13 @@ body {
   cursor: pointer;
   outline: none;
 }
+
 .comic-link:active {
   transform: scale(0.95) translateY(2px);
   box-shadow: 2px 2px 0 #e91e63;
   background: #ffe082;
 }
+
 .comic-link:hover {
   background: #e91e63;
   color: #fff;
@@ -54,15 +64,23 @@ body {
 .comic-panel {
   border: 4px solid #222;
   box-shadow: 8px 8px 0 #ffeb3b;
-  background: #fff;
+  background-color: #fff;
   padding: 2rem;
   margin-bottom: 2rem;
   border-radius: 12px;
 
-  background-color: #fff;
-  background-image: radial-gradient(#d1d5db, transparent 1px);
+  /* --- FIXED HALFTONE PATTERN --- */
+  /* This creates a sharp 2px gray dot, then transparent */
+  background-image: radial-gradient(circle, #d1d5db 2px, transparent 2.5px);
   background-size: 20px 20px;
+
+  /* NEW 3D STYLES */
+  transform-style: preserve-3d;
+  will-change: transform;
+  /* This creates the depth */
+  perspective: 1000px;
 }
+
 .speech-bubble {
   position: relative;
   background: #fff;
@@ -71,6 +89,7 @@ body {
   padding: 1rem 2rem;
   margin: 1rem 0;
 }
+
 .speech-bubble:after {
   content: "";
   position: absolute;
@@ -112,18 +131,68 @@ h3,
 @keyframes comicPop {
   0% {
     opacity: 0;
-    transform: scale(0.8) rotate(-2deg); /* Start small and tilted */
+    transform: scale(0.8) rotate(-2deg);
+    /* Start small and tilted */
   }
+
   70% {
-    transform: scale(1.02) rotate(1deg); /* Overshoot slightly */
+    transform: scale(1.02) rotate(1deg);
+    /* Overshoot slightly */
   }
+
   100% {
     opacity: 1;
-    transform: scale(1) rotate(0deg); /* Settle */
+    transform: scale(1) rotate(0deg);
+    /* Settle */
   }
 }
 
 /* Apply it when the hidden class is REMOVED */
 .comic-panel:not(.hidden) {
   animation: comicPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* --- Add/Update this in styles.css --- */
+/* --- Updated in styles.css (Image Version) --- */
+
+.action-word {
+  position: fixed;
+  pointer-events: none; /* Let clicks pass through */
+  z-index: 9999;
+  /* Center the container on the mouse click coordinates */
+  transform: translate(-50%, -50%);
+  /* Apply the pop animation */
+  animation: popFade 0.5s ease-out forwards; /* Increased duration slightly for visual clarity */
+  /* Ensure overflow is visible so shadows/outlines of images aren't cut off */
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style the image inside the container */
+.action-word img {
+  display: block;
+  width: 200px; /* Adjust this value to make the effects bigger or smaller */
+  height: auto;
+  /* Optional: Adds a crisp shadow to pop it off the page */
+  filter: drop-shadow(5px 5px 2px rgba(0,0,0,0.3));
+}
+
+/* Keyframes adjusted for images */
+@keyframes popFade {
+  0% {
+    transform: translate(-50%, -50%) scale(0) rotate(-20deg);
+    opacity: 1;
+  }
+  50% {
+    /* Pop bigger than final size */
+    transform: translate(-50%, -50%) scale(1.2) rotate(5deg);
+    opacity: 1;
+  }
+  100% {
+    /* Fade out and move up slightly */
+    transform: translate(-50%, -80%) scale(1) rotate(0deg);
+    opacity: 0;
+  }
 }
