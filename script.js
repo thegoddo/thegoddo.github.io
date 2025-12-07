@@ -70,30 +70,30 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  const panels = document.querySelectorAll(".comic-panel");
+  //   const panels = document.querySelectorAll(".comic-panel");
 
-  panels.forEach((panel) => {
-    panel.addEventListener("mousemove", (e) => {
-      const rect = panel.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+  //   panels.forEach((panel) => {
+  //     panel.addEventListener("mousemove", (e) => {
+  //       const rect = panel.getBoundingClientRect();
+  //       const x = e.clientX - rect.left;
+  //       const y = e.clientY - rect.top;
 
-      const xRotation = -1 * (((y - rect.height / 2) / rect.height) * 10);
-      const yRotation = ((x - rect.width / 2) / rect.width) * 10;
+  //       const xRotation = -1 * (((y - rect.height / 2) / rect.height) * 10);
+  //       const yRotation = ((x - rect.width / 2) / rect.width) * 10;
 
-      panel.style.transform = `perspective(1000px) scale(1.02) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
-    });
+  //       panel.style.transform = `perspective(1000px) scale(1.02) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
+  //     });
 
-    panel.addEventListener("mouseleave", () => {
-      panel.style.transform =
-        "perspective(1000px) scale(1) rotateX(0) rotateY(0)";
-      panel.style.transition = "transform 0.5s ease";
-    });
+  //     panel.addEventListener("mouseleave", () => {
+  //       panel.style.transform =
+  //         "perspective(1000px) scale(1) rotateX(0) rotateY(0)";
+  //       panel.style.transition = "transform 0.5s ease";
+  //     });
 
-    panel.addEventListener("mouseenter", () => {
-      panel.style.transition = "none";
-    });
-  });
+  //     panel.addEventListener("mouseenter", () => {
+  //       panel.style.transition = "none";
+  //     });
+  //   });
 
   showSection("about");
 });

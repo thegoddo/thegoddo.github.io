@@ -96,20 +96,73 @@
       </div>
 
       <div id="section-portfolio" class="comic-panel mb-8 hidden">
-        <h2 class="dynamic-header speech-bubble text-xl md:text-2xl">
-          <span style="color: red">Portfolio</span>: My Super Projects!
+        <h2 class="dynamic-header speech-bubble text-xl md:text-2xl mb-6">
+          <span style="color: red">Portfolio</span>: The Collection!
         </h2>
-        <p class="mb-4">
-          <span class="bg-yellow-300 px-1 border-2 border-black inline-block">Current Mission:</span>
-          Building a CHIP-8 emulator to conquer the tech world!
+
+        <p class="mb-6 font-bold">
+          <span class="bg-yellow-300 px-2 py-1 border-2 border-black inline-block -rotate-1">
+            CURRENT MISSION:
+          </span>
+          &nbsp; Building a CHIP-8 emulator to conquer the tech world!
         </p>
-        <ul class="list-disc pl-5 space-y-2">
-          <li>
-            <strong>Project A:</strong> Employee Management (React, Spring)
-          </li>
-          <li><strong>Project B:</strong> Minigre & rttpserver (Rust)</li>
-        </ul>
-      </div>
+
+        <div class="project-grid">
+
+          <div class="comic-card">
+            <img src="/images/wow.png" class="sticker" alt="WOW!">
+
+            <div class="card-header bg-blue-100">
+              <span class="font-bangers text-4xl text-blue-500 opacity-50">EMP-SYS</span>
+            </div>
+
+            <div class="p-4">
+              <h3 class="font-bangers text-2xl mb-2">Employee Manager</h3>
+              <p class="text-sm mb-4 text-gray-700">
+                A robust full-stack system to manage corporate chaos. Handles payroll, leaves, and hero identities.
+              </p>
+
+              <div class="mb-4">
+                <span class="tech-badge bg-cyan-300">React</span>
+                <span class="tech-badge bg-green-300">Spring Boot</span>
+                <span class="tech-badge bg-blue-200">MySQL</span>
+              </div>
+
+              <div class="flex gap-2">
+                <a href="#" class="comic-btn-small">View Code</a>
+                <a href="#" class="comic-btn-small bg-orange-300">Live Demo</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="comic-card">
+            <img src="/images/zap.png" class="sticker"
+              style="top:auto; bottom:-10px; right:-10px; transform: rotate(-10deg);" alt="ZAP!">
+
+            <div class="card-header bg-orange-100">
+              <span class="font-bangers text-4xl text-orange-500 opacity-50">RUST-E</span>
+            </div>
+
+            <div class="p-4">
+              <h3 class="font-bangers text-2xl mb-2">Minigre & Rttp</h3>
+              <p class="text-sm mb-4 text-gray-700">
+                Blazing fast command line tools built with Rust. High performance meets low level memory safety.
+              </p>
+
+              <div class="mb-4">
+                <span class="tech-badge bg-orange-400 text-white">Rust</span>
+                <span class="tech-badge bg-gray-300">CLI</span>
+                <span class="tech-badge bg-purple-300">Network</span>
+              </div>
+
+              <div class="flex gap-2">
+                <a href="#" class="comic-btn-small">View Code</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>>
 
       <div id="section-experience" class="comic-panel mb-8 hidden">
         <div class="flex flex-col md:flex-row items-center">
