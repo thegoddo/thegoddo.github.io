@@ -85,3 +85,15 @@ body {
   /* This creates a large red shadow offset to the bottom-right */
   box-shadow: 8px 8px 0px #ef4444;
 }
+
+p, li, span.text_base {
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  font-weight: 500;
+  color: #333;
+}
+
+h1, h2, h3, .comic-link, .speech-bubble {
+  font-family: "Bangers", cursive;
+  letter-spacing: 1px;
+}
