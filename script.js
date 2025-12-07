@@ -1,17 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // --- 1. Element Selection ---
   const contentPanels = document.querySelectorAll(".comic-panel");
   const navButtons = document.querySelectorAll(".nav-btn");
   const hamburgerBtn = document.getElementById("hamburgerBtn");
   const closeMenuBtn = document.getElementById("closeMenuBtn");
   const mobileMenu = document.getElementById("mobileMenu");
-
   const speechTitles = document.querySelectorAll(".dynamic-header");
 
-  // --- 2. State Tracking (NEW) ---
-  let currentActiveSection = "about"; // Default start section
+  let currentActiveSection = "about";
 
-  // --- 3. Dialogues Data ---
   const dialogues = {
     about: `<span style="color: red">ORIGIN STORY</span>: The Man Behind the Mask`,
     portfolio: `<span style="color: red">MISSION LOG</span>: The Collection!`,
@@ -19,48 +15,61 @@ document.addEventListener("DOMContentLoaded", function () {
     contact: `<span style="color: red">ALERT</span>: Signal the Hero!`,
   };
 
-  // --- 4. Navigation Logic ---
+  // Mobile Nav Elements
+  const mobilePrevBtn = document.getElementById("mobilePrev");
+  const mobileNextBtn = document.getElementById("mobileNext");
+  const mobilePageTitle = document.getElementById("mobilePageTitle");
+  const sectionsList = ["about", "portfolio", "experience", "contact"];
+  const sectionTitles = {
+    about: "ORIGIN",
+    portfolio: "MISSIONS",
+    experience: "BATTLES",
+    contact: "ALERT",
+  };
+
+  function updateMobileNavUI(sectionId) {
+    if (mobilePageTitle && sectionTitles[sectionId]) {
+      mobilePageTitle.innerText = sectionTitles[sectionId];
+    }
+  }
+
   function showSection(sectionId) {
-    // Update the state so we know what to reset to
     currentActiveSection = sectionId;
 
-    // Hide all panels
     contentPanels.forEach((panel) => {
       panel.classList.add("hidden");
     });
 
-    // Show target panel
     const targetPanel = document.getElementById(`section-${sectionId}`);
     if (targetPanel) {
       targetPanel.classList.remove("hidden");
     }
 
-    // Scroll to top
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
 
-    // Reset header text immediately to match the new section
     if (dialogues[sectionId]) {
       speechTitles.forEach((title) => {
         title.innerHTML = dialogues[sectionId];
       });
     }
+
+    updateMobileNavUI(sectionId);
   }
 
-  // --- 5. Event Listeners ---
   navButtons.forEach((btn) => {
-    // Click Event (Switch Section)
     btn.addEventListener("click", () => {
       const section = btn.getAttribute("data-section");
       showSection(section);
 
-      // Close mobile menu if open
       if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
         mobileMenu.classList.add("hidden");
         mobileMenu.classList.remove("flex");
       }
     });
 
-    // Hover Enter (Preview Section Text)
     btn.addEventListener("mouseenter", () => {
       const section = btn.getAttribute("data-section");
       if (dialogues[section]) {
@@ -70,7 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Hover Leave (Reset to CURRENT Active Section, not always 'About')
     btn.addEventListener("mouseleave", () => {
       if (dialogues[currentActiveSection]) {
         speechTitles.forEach((title) => {
@@ -80,7 +88,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // --- 6. Mobile Menu Toggle ---
   if (hamburgerBtn && mobileMenu) {
     hamburgerBtn.addEventListener("click", () => {
       mobileMenu.classList.remove("hidden");
@@ -93,8 +100,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Mobile Bottom Navigation Listeners
+  if (mobilePrevBtn && mobileNextBtn) {
+    mobilePrevBtn.addEventListener("click", () => {
+      let currentIndex = sectionsList.indexOf(currentActiveSection);
+      let newIndex =
+        (currentIndex - 1 + sectionsList.length) % sectionsList.length;
+      showSection(sectionsList[newIndex]);
+    });
+
+    mobileNextBtn.addEventListener("click", () => {
+      let currentIndex = sectionsList.indexOf(currentActiveSection);
+      let newIndex = (currentIndex + 1) % sectionsList.length;
+      showSection(sectionsList[newIndex]);
+    });
+  }
+
   showSection("about");
 });
+
 document.addEventListener("click", (e) => {
   if (
     e.target.closest("a") ||

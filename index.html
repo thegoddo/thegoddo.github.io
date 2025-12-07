@@ -5,12 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Biswajit Shaw | The Full-Stack Sentinel</title>
-
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet" />
-
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -19,7 +16,7 @@
   <header
     class="md:hidden fixed top-0 left-0 w-full bg-yellow-400 border-b-4 border-black z-50 p-4 flex justify-between items-center">
     <span class="text-2xl font-bold font-bangers tracking-wider">Biswajit Shaw</span>
-    <button id="hamburgerBtn" class="comic-link py-1 px-3 text-sm">
+    <button id="hamburgerBtn" class="comic-burst-btn">
       MENU
     </button>
   </header>
@@ -54,11 +51,13 @@
       <div class="hire-me-bubble hidden md:block group-hover:scale-110 transition-transform origin-right">
         HIRE ME!
       </div>
-
       <a href="/files/resume.pdf" download aria-label="Download Resume"
         class="cv-attention comic-icon flex justify-center items-center h-12 w-12 bg-red-500 text-white border-2 border-black hover:bg-red-600">
-
-        <img width="48" height="48" src="https://img.icons8.com/material-outlined/48/pdf-2.png" alt="pdf-2" />
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
+          class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M12 9.75V1.5m0 0L8.25 5.25M12 1.5 15.75 5.25" />
+        </svg>
       </a>
     </div>
   </aside>
@@ -101,7 +100,6 @@
         <h2 class="dynamic-header speech-bubble text-xl md:text-2xl mb-6">
           <span style="color: red">MISSION LOG</span>: The Collection!
         </h2>
-
         <div class="mb-8 p-4 bg-yellow-100 border-l-4 border-black">
           <p class="font-bold font-bangers text-xl tracking-wide">
             <span class="bg-yellow-400 px-2 py-1 border-2 border-black inline-block -rotate-1 shadow-[2px_2px_0_#000]">
@@ -110,62 +108,50 @@
             &nbsp; Building a CHIP-8 emulator to conquer the tech world!
           </p>
         </div>
-
         <div class="project-grid">
-
           <div class="comic-card group">
             <img src="/images/wow.png" class="sticker" alt="WOW!">
-
             <div class="card-header bg-blue-100 group-hover:bg-blue-200 transition-colors">
               <span class="font-bangers text-5xl text-blue-500 opacity-60">EMP-SYS</span>
             </div>
-
             <div class="p-4">
               <h3 class="font-bangers text-2xl mb-2">Operation: Corp Chaos</h3>
               <p class="text-sm mb-4 text-gray-700">
                 The villainous 'HR Paperwork' was destroying the city! I deployed a full-stack shield to automate
                 payroll and manage hero identities.
               </p>
-
               <div class="mb-4 flex flex-wrap gap-2">
                 <span class="tech-badge bg-cyan-300">React</span>
                 <span class="tech-badge bg-green-300">Spring Boot</span>
                 <span class="tech-badge bg-blue-200">MySQL</span>
               </div>
-
               <div class="flex gap-2">
                 <a href="#" class="comic-btn-small">View Code</a>
               </div>
             </div>
           </div>
-
           <div class="comic-card group">
             <img src="/images/zap.png" class="sticker"
               style="top:auto; bottom:-15px; right:-15px; transform: rotate(-10deg);" alt="ZAP!">
-
             <div class="card-header bg-orange-100 group-hover:bg-orange-200 transition-colors">
               <span class="font-bangers text-5xl text-orange-500 opacity-60">RUST-E</span>
             </div>
-
             <div class="p-4">
               <h3 class="font-bangers text-2xl mb-2">The Ironclad Protocol</h3>
               <p class="text-sm mb-4 text-gray-700">
                 Built with the unbreakable metal known as <strong>Rust</strong>. Included "Minigre" (CLI) and "Rttp"
                 (Server) for blazing fast performance.
               </p>
-
               <div class="mb-4 flex flex-wrap gap-2">
                 <span class="tech-badge bg-orange-400 text-white">Rust</span>
                 <span class="tech-badge bg-gray-300">CLI Tools</span>
                 <span class="tech-badge bg-purple-300">Network</span>
               </div>
-
               <div class="flex gap-2">
                 <a href="#" class="comic-btn-small">View Code</a>
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
@@ -175,18 +161,15 @@
             <h2 class="dynamic-header speech-bubble text-xl md:text-2xl">
               <span style="color: red">Battle Log</span>: The Training Arc
             </h2>
-
             <div class="space-y-6 mt-6">
               <div class="bg-white p-4 border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,1)] relative">
                 <div
                   class="absolute -top-3 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-red-500 border-2 border-black">
                 </div>
-
                 <h3 class="font-bangers text-2xl text-blue-600 mb-2">Current Status: Level 1 Hero</h3>
                 <p>I have completed my training at the Academy. My armor is polished, my syntax is clean, and I am ready
                   for my first major alliance.</p>
               </div>
-
               <div class="bg-yellow-300 p-4 border-2 border-black rotate-1 shadow-[4px_4px_0px_rgba(0,0,0,1)]">
                 <h3 class="font-bangers text-2xl underline decoration-wavy decoration-red-500">LOOKING FOR A NEMESIS
                 </h3>
@@ -196,7 +179,6 @@
               </div>
             </div>
           </div>
-
           <div
             class="mt-8 md:mt-0 md:ml-12 w-[220px] h-[220px] border-4 border-black image-red-shadow overflow-hidden bg-white">
             <img src="/images/luffy.png" alt="Luffy" class="w-full h-full object-cover">
@@ -209,22 +191,18 @@
           <h2 class="dynamic-header speech-bubble text-xl md:text-2xl">
             <span style="color: red">Alert</span>: Signal the Hero!
           </h2>
-
           <div
             class="w-[200px] h-[200px] border-4 border-black image-red-shadow overflow-hidden mb-8 bg-yellow-50 flex items-center justify-center">
             <img src="/images/bat-signal.png" alt="Bat Signal" class="w-full h-full object-cover">
           </div>
-
           <p class="mb-6 text-xl max-w-lg font-bold">
             Citizens! Do you have a project in peril? A bug that won't die?
             <br><span class="text-blue-600">Alfred is standing by.</span>
           </p>
-
           <a href="mailto:biswajitshaw220@gmail.com"
             class="comic-link text-xl px-10 py-4 bg-red-500 text-white hover:bg-red-600 hover:text-white transform hover:scale-110 hover:-rotate-2 transition-all shadow-[6px_6px_0_#000]">
             SEND URGENT TRANSMISSION
           </a>
-
           <p class="mt-6 text-sm text-gray-500 font-inter italic">
             (Please don't use the giant sky-beam, the neighbors complain.)
           </p>
@@ -233,6 +211,21 @@
 
     </div>
   </main>
+
+  <nav
+    class="md:hidden fixed bottom-0 left-0 w-full bg-yellow-400 border-t-4 border-black p-3 z-50 flex justify-between items-center shadow-[0_-4px_0_rgba(0,0,0,0.1)]">
+    <button id="mobilePrev"
+      class="font-bangers text-xl px-4 py-1 border-2 border-black bg-white hover:bg-gray-100 transition-transform active:scale-95">
+      ⬅ PREV
+    </button>
+    <span id="mobilePageTitle" class="font-bangers text-xl text-red-600 tracking-wider">
+      ORIGIN
+    </span>
+    <button id="mobileNext"
+      class="font-bangers text-xl px-4 py-1 border-2 border-black bg-white hover:bg-gray-100 transition-transform active:scale-95">
+      NEXT ➡
+    </button>
+  </nav>
 
   <script src="script.js"></script>
 </body>
