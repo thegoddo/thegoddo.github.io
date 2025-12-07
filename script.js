@@ -167,3 +167,35 @@ document.addEventListener("click", (e) => {
     el.remove();
   }, 500);
 });
+
+const secretCode = [
+  "ArrowUp",
+  "ArrowUp",
+  "ArrowDown",
+  "ArrowDown",
+  "ArrowLeft",
+  "ArrowRight",
+  "ArrowLeft",
+  "ArrowRight",
+  "b",
+  "a",
+];
+let inputSequence = [];
+
+document.addEventListener("keydown", (e) => {
+  inputSequence.push(e.key);
+  inputSequence.splice(
+    -secretCode.length - 1,
+    inputSequence.length - secretCode.length
+  );
+
+  if (inputSequence.join("").includes(secretCode.join(""))) {
+    // TRIGGER VILLAIN MODE
+    alert("🦹 VILLAIN MODE ACTIVATED!");
+    document.body.style.filter = "invert(1) hue-rotate(180deg)";
+    document.body.style.transition = "filter 1s ease";
+
+    // Reset sequence
+    inputSequence = [];
+  }
+});
