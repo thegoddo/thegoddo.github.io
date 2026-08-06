@@ -1,5 +1,14 @@
 /* Full-page locked viewport */
+
+@font-face {
+  font-family: "SpiderManRetro";
+  src: url("fonts/04B_03__.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
+  font-family: "SpiderManRetro", monospace;
   margin: 0;
   padding: 0;
   width: 100vw;
@@ -37,6 +46,7 @@ body {
 }
 
 .logo-img-cls {
+  padding-left: 50px;
   grid-area: logo;
   max-width: 100%;
   max-height: 100%;
@@ -49,14 +59,52 @@ body {
   grid-area: info;
   max-width: 100%;
   max-height: 100%;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
 }
 
 .status-bar {
   grid-area: status;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .stack-sec {
   grid-area: stack;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.retro-arcade-text {
+  position: relative;
+  font-family: "SpiderManRetro", "Press Start 2P", monospace;
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+
+  /* Top layer: Pure Gradient */
+  background: linear-gradient(180deg, #ffed4a 0%, #ff5e00 50%, #d92600 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Bottom layer: White Stroke + Black Drop Shadow */
+.retro-arcade-text::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  -webkit-text-stroke: 6px #ffffff;
+  -webkit-text-fill-color: #ffffff;
+  filter: drop-shadow(4px 4px 0px #000000);
 }
