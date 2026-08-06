@@ -46,7 +46,7 @@ body {
 }
 
 .logo-img-cls {
-  padding-left: 50px;
+  padding: 5px;
   grid-area: logo;
   max-width: 100%;
   max-height: 100%;
