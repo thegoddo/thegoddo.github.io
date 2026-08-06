@@ -148,3 +148,104 @@ body {
   transform: scaleX(1);
   transform-origin: left;
 }
+
+/* Game Pause / Directory Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(8, 10, 15, 0.85);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.modal-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Retro Game Menu Card */
+.menu-card {
+  background: #0b0f19;
+  border: 3px solid black;
+  /* border-radius: 12px; */
+  width: 90%;
+  max-width: 480px;
+  padding: 1.5rem;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px dashed #ffed4a;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.menu-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #ffed4a;
+  letter-spacing: 1.5px;
+  text-shadow: 2px 2px 0px #000;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: #ff2a2a;
+  font-size: 1.8rem;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #39ff14;
+}
+
+/* Directory Nav Items */
+.menu-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background-color: #161b22;
+  border: 2px solid #30363d;
+  /* border-radius: 8px; */
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  box-shadow: 3px 3px 0px #000000;
+}
+
+.menu-item:hover {
+  background-color: #ff2a2a;
+  color: #000000;
+  border-color: black;
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px rgb(89, 2, 2);
+}
+
+.menu-item .icon {
+  font-size: 1.1rem;
+}
