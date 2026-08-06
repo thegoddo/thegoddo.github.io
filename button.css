@@ -1,0 +1,109 @@
+/* Container arrangement */
+.mission-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+label[for="mission-stack"] {
+  font-size: 0.85rem;
+  color: #ffed4a;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0px #000;
+}
+
+.control-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Styled Select Dropdown */
+#mission-stack {
+  font-family: "SpiderManRetro", monospace;
+  background-color: #0d1117;
+  color: #ffffff;
+  border: 2px solid #ff5e00;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 0.8rem;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 3px 3px 0px #000;
+}
+
+/* Redesigned Toxic-City CTA Button */
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  padding: 8px 24px;
+  text-decoration: none;
+  font-family: "SpiderManRetro", monospace;
+  font-size: 1rem;
+  color: #000000;
+  background: #39ff14; /* Radioactive Green */
+  transition: 0.3s ease;
+  box-shadow: 4px 4px 0 #000000;
+  transform: skewX(-12deg);
+  border: 2px solid #000;
+}
+
+.cta:hover {
+  background: #ff5e00; /* Spidey Orange on Hover */
+  color: #ffffff;
+  box-shadow: 6px 6px 0 #ffed4a;
+}
+
+.cta span {
+  transform: skewX(12deg);
+}
+
+.cta span:nth-child(2) {
+  margin-left: 12px;
+  display: flex;
+  align-items: center;
+}
+
+/* SVG Arrows */
+path.one {
+  transition: 0.4s;
+  transform: translateX(-60%);
+}
+
+path.two {
+  transition: 0.5s;
+  transform: translateX(-30%);
+}
+
+.cta:hover path.three {
+  animation: color_anim 1s infinite 0.2s;
+}
+
+.cta:hover path.one {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.6s;
+}
+
+.cta:hover path.two {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.4s;
+}
+
+@keyframes color_anim {
+  0% {
+    fill: #ffffff;
+  }
+  50% {
+    fill: #ffed4a;
+  }
+  100% {
+    fill: #ffffff;
+  }
+}
