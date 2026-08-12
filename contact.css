@@ -1,0 +1,81 @@
+@font-face {
+  font-family: "SpiderManRetro";
+  src: url("fonts/04B_03__.TTF") format("truetype");
+}
+
+/* 1. Center everything on the viewport */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+  background-image: url("./assets/spider_2.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "SpiderManRetro", monospace;
+  overflow: hidden;
+}
+
+/* 2. Container setup with spacing */
+.wrapper {
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px; /* Spacing between cards */
+}
+
+/* 3. Styled arcade cards */
+.box {
+  width: 100%;
+  height: 70px;
+  background: #ffffff;
+  border: 3px solid #21262d;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0px #000000;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Hover effect */
+.box:hover {
+  transform: translateY(-3px);
+  background: #EE3434;
+  border-color: #890504; /* Dark Red border */
+  box-shadow: 6px 6px 0px #000000;
+}
+
+/* 4. Align link content horizontally & center vertically */
+.box a {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #000000;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  transition: color 0.2s ease;
+}
+
+/* Text and Icon color flip on hover */
+.box:hover a {
+  color: #ffffff;
+}
+
+.box img {
+  object-fit: contain;
+  transition: filter 0.2s ease;
+}
+
+.box:hover img {
+  filter: invert(1);
+}

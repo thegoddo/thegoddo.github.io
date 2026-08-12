@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Projects Showcase</title>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="projects.css" />
+	</head>
+	<body>
+		<div class="projects-wrapper">
+			<h1 class="retro-arcade-text" data-text="SELECT PROJECT">
+				SELECT PROJECT
+			</h1>
+
+			<div class="nfs-carousel-container">
+				<!-- Left Arrow Button -->
+				<button
+					class="arcade-nav prev-btn"
+					id="prevBtn"
+					aria-label="Previous Project"
+				>
+					&lt;
+				</button>
+
+				<!-- Cards Track -->
+				<div class="cards-track" id="cardsTrack">
+					<!-- Card 1 -->
+					<div class="project-card">
+						<div class="card-inner">
+							<span class="project-tag">FEATURED</span>
+							<h2>Geospatial Pathfinding</h2>
+							<p>
+								Interactive pathfinding visualizer with
+								real-time map rendering.
+							</p>
+							<div class="tech-stack">
+								Next.js • Spring • Docker
+							</div>
+							<a
+								href="https://github.com/thegoddo"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="cta-btn"
+								>LAUNCH &gt;</a
+							>
+						</div>
+					</div>
+
+					<!-- Card 2 -->
+					<div class="project-card">
+						<div class="card-inner">
+							<span class="project-tag">UTILITY</span>
+							<h2>Image Processing Kit</h2>
+							<p>
+								High-load image compression & background removal
+								pipeline.
+							</p>
+							<div class="tech-stack">
+								Node.js • React • Kafka
+							</div>
+							<a
+								href="https://github.com/thegoddo"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="cta-btn"
+								>LAUNCH &gt;</a
+							>
+						</div>
+					</div>
+
+					<!-- Card 3 -->
+					<div class="project-card">
+						<div class="card-inner">
+							<span class="project-tag">EXPERIMENTAL</span>
+							<h2>Arcade Showcase</h2>
+							<p>
+								Retro 8-bit UI portfolio with GSAP animations
+								and custom CSS.
+							</p>
+							<div class="tech-stack">
+								JavaScript • GSAP • CSS3
+							</div>
+							<a
+								href="https://github.com/thegoddo"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="cta-btn"
+								>LAUNCH &gt;</a
+							>
+						</div>
+					</div>
+				</div>
+
+				<!-- Right Arrow Button -->
+				<button
+					class="arcade-nav next-btn"
+					id="nextBtn"
+					aria-label="Next Project"
+				>
+					&gt;
+				</button>
+			</div>
+		</div>
+
+		<!-- GSAP CDN -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+		<script src="projects.js"></script>
+	</body>
+</html>
