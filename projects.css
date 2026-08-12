@@ -95,7 +95,7 @@ body {
 
 .tech-stack {
 	font-size: 0.75rem;
-	color: #39ff14;
+	color: #EE3434;
 	background: #0d1117;
 	padding: 8px;
 	border-radius: 4px;
@@ -130,7 +130,7 @@ body {
 	background: #161b22;
 	border: 3px solid #ff5e00;
 	border-radius: 8px;
-	color: #39ff14;
+	color: #EE3434;
 	font-family: "SpiderManRetro", monospace;
 	font-size: 1.8rem;
 	font-weight: 900;
@@ -149,7 +149,7 @@ body {
 
 .arcade-nav:hover {
 	background: #21262d;
-	border-color: #39ff14;
+	border-color: #890504;
 }
 
 .arcade-nav:active {
