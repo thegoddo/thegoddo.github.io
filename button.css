@@ -107,3 +107,94 @@ path.two {
     fill: #ffffff;
   }
 }
+
+
+.arcade-play-btn {
+  /* Positioning & Dimensions */
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 28px;
+  margin: 5px 0 5px 0;
+  min-width: 200px;
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+
+  /* Red Top-to-Bottom Gradient */
+  background: linear-gradient(180deg, #EE3434 0%, #890504 100%);
+
+  /* Multi-layered Outer Shadow & Border Definition */
+  box-shadow:
+    0 0 0 1px #ff6b6b inset,         /* Inner highlight top border */
+    0 0 0 2px #530000 inset,         /* Dark inner ring */
+    0 4px 10px rgba(0, 0, 0, 0.7);   /* Outer drop shadow */
+
+  /* Font Styling */
+  font-family: 'SpiderManRetro', 'Press Start 2P', sans-serif;
+  letter-spacing: 2px;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.15s ease;
+}
+
+/* Micro Carbon-Mesh / Grid Texture Overlay */
+.arcade-play-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(rgba(0, 0, 0, 0.35) 20%, transparent 20%),
+    radial-gradient(rgba(255, 255, 255, 0.15) 20%, transparent 20%);
+  background-size: 4px 4px;
+  background-position: 0 0, 2px 2px;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* White Bold Text with Subtle Metallic Shadow */
+.arcade-play-btn .btn-text {
+  position: relative;
+  z-index: 1;
+  color: #FFFFFF;
+  font-size: 2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-shadow:
+    0px 2px 3px rgba(0, 0, 0, 0.8),
+    0px -1px 1px rgba(255, 255, 255, 0.5);
+}
+
+/* Sharp Chevron Arrow */
+.arcade-play-btn .btn-arrow {
+  position: relative;
+  z-index: 1;
+  color: #FFFFFF;
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-left: 20px;
+  text-shadow:
+    0px 2px 3px rgba(0, 0, 0, 0.8),
+    0px -1px 1px rgba(255, 255, 255, 0.5);
+}
+
+/* Hover State */
+.arcade-play-btn:hover {
+  filter: brightness(1.15);
+  box-shadow:
+    0 0 0 1px #ffffff inset,
+    0 0 0 2px #530000 inset,
+    0 6px 15px rgba(238, 52, 52, 0.4);
+}
+
+/* Click / Active Press State */
+.arcade-play-btn:active {
+  transform: translateY(2px);
+  box-shadow:
+    0 0 0 1px #ff6b6b inset,
+    0 0 0 2px #530000 inset,
+    0 2px 5px rgba(0, 0, 0, 0.9);
+}
